@@ -13,15 +13,15 @@ namespace KR
     public partial class Form1 : Form
     {
         private Form curForm;
-        private Form[] forms = new Form[4] { null, null, null, null};
         public Form1()
         {
             InitializeComponent();
             this.IsMdiContainer = true;
             Cars carsForm = new Cars();
+            carsForm.FormBorderStyle = FormBorderStyle.None;
             carsForm.MdiParent = this;
             carsForm.WindowState = FormWindowState.Maximized;
-
+            carsForm.Dock = DockStyle.Fill;
             this.curForm = carsForm;
             curForm.Show();
         }
@@ -35,8 +35,8 @@ namespace KR
             curForm.Close();
             Cars carsForm = new Cars();
             carsForm.MdiParent = this;
-            carsForm.WindowState = FormWindowState.Maximized;
-            forms[0] = carsForm;
+            carsForm.FormBorderStyle = FormBorderStyle.None;
+            carsForm.Dock = DockStyle.Fill;
             this.curForm = carsForm;
             curForm.Show();
 
@@ -51,8 +51,8 @@ namespace KR
             curForm.Close();
             Reports reportsForm = new Reports();
             reportsForm.MdiParent = this;
-            reportsForm.WindowState = FormWindowState.Maximized;
-            forms[1] = reportsForm;
+            reportsForm.Dock = DockStyle.Fill;
+            reportsForm.FormBorderStyle = FormBorderStyle.None;
             curForm = reportsForm;
             curForm.Show();
         }
@@ -66,8 +66,8 @@ namespace KR
             curForm.Close();
             Profile profileForm = new Profile();
             profileForm.MdiParent = this;
-            profileForm.WindowState = FormWindowState.Maximized;
-            forms[2] = profileForm;
+            profileForm.Dock = DockStyle.Fill;
+            profileForm.FormBorderStyle = FormBorderStyle.None;
             curForm = profileForm;
             curForm.Show();
         }
@@ -81,9 +81,9 @@ namespace KR
             curForm.Close();
             About aboutForm = new About();
             aboutForm.MdiParent = this;
-            aboutForm.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            aboutForm.WindowState = FormWindowState.Maximized;
-            forms[3] = aboutForm;
+            aboutForm.MdiParent = this;
+            aboutForm.Dock = DockStyle.Fill;
+            aboutForm.FormBorderStyle = FormBorderStyle.None;
             curForm = aboutForm;
             curForm.Show();
         }
