@@ -32,6 +32,7 @@
             this.автомобилиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отзывыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.личныйКабинетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оСебеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,8 +41,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.автомобилиToolStripMenuItem,
             this.отзывыToolStripMenuItem,
-            this.личныйКабинетToolStripMenuItem});
+            this.личныйКабинетToolStripMenuItem,
+            this.оСебеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.MdiWindowListItem = this.автомобилиToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
@@ -52,18 +55,28 @@
             this.автомобилиToolStripMenuItem.Name = "автомобилиToolStripMenuItem";
             this.автомобилиToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.автомобилиToolStripMenuItem.Text = "Автомобили";
+            this.автомобилиToolStripMenuItem.Click += new System.EventHandler(this.автомобилиToolStripMenuItem_Click);
             // 
             // отзывыToolStripMenuItem
             // 
             this.отзывыToolStripMenuItem.Name = "отзывыToolStripMenuItem";
             this.отзывыToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.отзывыToolStripMenuItem.Text = "Отзывы";
+            this.отзывыToolStripMenuItem.Click += new System.EventHandler(this.отзывыToolStripMenuItem_Click);
             // 
             // личныйКабинетToolStripMenuItem
             // 
             this.личныйКабинетToolStripMenuItem.Name = "личныйКабинетToolStripMenuItem";
             this.личныйКабинетToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
             this.личныйКабинетToolStripMenuItem.Text = "Личный кабинет";
+            this.личныйКабинетToolStripMenuItem.Click += new System.EventHandler(this.личныйКабинетToolStripMenuItem_Click);
+            // 
+            // оСебеToolStripMenuItem
+            // 
+            this.оСебеToolStripMenuItem.Name = "оСебеToolStripMenuItem";
+            this.оСебеToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.оСебеToolStripMenuItem.Text = "О себе";
+            this.оСебеToolStripMenuItem.Click += new System.EventHandler(this.оСебеToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -71,8 +84,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -87,6 +102,7 @@
         private System.Windows.Forms.ToolStripMenuItem автомобилиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отзывыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem личныйКабинетToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оСебеToolStripMenuItem;
     }
 }
 

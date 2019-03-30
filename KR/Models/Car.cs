@@ -9,6 +9,7 @@ namespace KR.Models
     class Car
     {
         public int CarId { get; set; }
+        public string Model { get; set; }
         public double Price { get; set; }
         public int Doors { get; set; }
         public int Consumption { get; set; }
