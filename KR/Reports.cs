@@ -13,6 +13,7 @@ namespace KR
 {
     public partial class Reports : Form
     {
+        private NewReport addForm;
         private List<Report> reports = new List<Report>()
         {
             new Report
@@ -53,7 +54,7 @@ namespace KR
             b.Width = 200;
             b.Height = 40;
             b.Margin = new Padding(3, 14, 3, 3);
-            b.Click += new System.EventHandler(AddReport);
+            b.Click += new System.EventHandler(ShowForm);
             p.Controls.Add(b);
         }
 
@@ -82,35 +83,21 @@ namespace KR
             rr.Controls.Add(date);
             p.Controls.Add(rr);
         }
-
-        private void AddReport(object sender, EventArgs e)
+        private void ShowForm(object sender, EventArgs e)
         {
-            reports.Add(new Report
-                {
-                    ReportId = 1,
-                    User = new User
-                    {
-                        UserId = 1,
-                        Name = "Иван",
-                        Email = "email@email.com",
-                        Password = "123"
-                    },
-                    Text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-                    Mark = 5,
-                    Car = new Car
-                    {
-                        CarId = 1,
-                        Consumption = 8,
-                        Description = "Норм авто",
-                        Doors = 5,
-                        Model = "VW Golf",
-                        Fuel = "Бензин",
-                        Price = 300
-                    },
-                    CreateDate = DateTime.Now
-                }
-           
-            );
+            addForm = new NewReport();
+            addForm.parent = this;
+            addForm.Show();
+        }
+
+        public void CloseForm()
+        {
+            addForm.Hide();
+        }
+
+        public void AddReport(Report r)
+        {
+            reports.Add(r);
             p.Controls.Remove(p.Controls[p.Controls.Count - 1]);
             ShowReport(reports[reports.Count - 1]);
             Button b = new Button();
@@ -118,7 +105,7 @@ namespace KR
             b.Width = 200;
             b.Height = 40;
             b.Margin = new Padding(3, 14, 3, 3);
-            b.Click += new System.EventHandler(AddReport);
+            b.Click += new System.EventHandler(ShowForm);
             p.Controls.Add(b);
         }
     }

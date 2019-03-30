@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KR.Models
 {
-    class Car
+    public class Car
     {
         public int CarId { get; set; }
         public string Model { get; set; }

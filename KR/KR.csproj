@@ -68,6 +68,12 @@
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Car.cs" />
+    <Compile Include="NewReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewReport.Designer.cs">
+      <DependentUpon>NewReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewReport.resx">
+      <DependentUpon>NewReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
