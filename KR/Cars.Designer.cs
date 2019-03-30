@@ -194,9 +194,6 @@
             this.label1.Size = new System.Drawing.Size(274, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Иван Номоконов (2018-2019). Все права защищены.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.UseWaitCursor = true;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 

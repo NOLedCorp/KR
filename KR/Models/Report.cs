@@ -13,5 +13,6 @@ namespace KR.Models
         public User User { get; set; }
         public string Text { get; set; }
         public int Mark { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }
