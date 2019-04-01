@@ -35,14 +35,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.model = new System.Windows.Forms.TextBox();
+            this.consumption = new System.Windows.Forms.TextBox();
+            this.description = new System.Windows.Forms.TextBox();
+            this.fuel = new System.Windows.Forms.ComboBox();
+            this.doors = new System.Windows.Forms.NumericUpDown();
+            this.price = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doors)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +67,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 98);
+            this.label3.Location = new System.Drawing.Point(32, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 2;
@@ -76,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 150);
+            this.label4.Location = new System.Drawing.Point(32, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 13);
             this.label4.TabIndex = 3;
@@ -85,7 +85,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 201);
+            this.label5.Location = new System.Drawing.Point(298, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 13);
             this.label5.TabIndex = 4;
@@ -94,7 +94,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 254);
+            this.label6.Location = new System.Drawing.Point(298, 102);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 5;
@@ -103,77 +103,81 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 302);
+            this.label7.Location = new System.Drawing.Point(32, 217);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "Описание";
             // 
-            // textBox1
+            // model
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 20);
-            this.textBox1.TabIndex = 7;
+            this.model.Location = new System.Drawing.Point(35, 65);
+            this.model.Name = "model";
+            this.model.Size = new System.Drawing.Size(247, 20);
+            this.model.TabIndex = 7;
             // 
-            // textBox2
+            // consumption
             // 
-            this.textBox2.Location = new System.Drawing.Point(35, 217);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(247, 20);
-            this.textBox2.TabIndex = 8;
+            this.consumption.Location = new System.Drawing.Point(301, 65);
+            this.consumption.Name = "consumption";
+            this.consumption.Size = new System.Drawing.Size(180, 20);
+            this.consumption.TabIndex = 8;
             // 
-            // textBox3
+            // description
             // 
-            this.textBox3.Location = new System.Drawing.Point(35, 318);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(446, 120);
-            this.textBox3.TabIndex = 9;
+            this.description.Location = new System.Drawing.Point(35, 233);
+            this.description.Multiline = true;
+            this.description.Name = "description";
+            this.description.Size = new System.Drawing.Size(446, 120);
+            this.description.TabIndex = 9;
             // 
-            // comboBox1
+            // fuel
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 270);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(247, 21);
-            this.comboBox1.TabIndex = 10;
+            this.fuel.FormattingEnabled = true;
+            this.fuel.Items.AddRange(new object[] {
+            "Бензин",
+            "Дизель"});
+            this.fuel.Location = new System.Drawing.Point(301, 118);
+            this.fuel.Name = "fuel";
+            this.fuel.Size = new System.Drawing.Size(180, 21);
+            this.fuel.TabIndex = 10;
             // 
-            // numericUpDown1
+            // doors
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(35, 166);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(247, 20);
-            this.numericUpDown1.TabIndex = 11;
+            this.doors.Location = new System.Drawing.Point(35, 171);
+            this.doors.Name = "doors";
+            this.doors.Size = new System.Drawing.Size(247, 20);
+            this.doors.TabIndex = 11;
             // 
-            // textBox4
+            // price
             // 
-            this.textBox4.Location = new System.Drawing.Point(35, 114);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(247, 20);
-            this.textBox4.TabIndex = 12;
+            this.price.Location = new System.Drawing.Point(35, 119);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(247, 20);
+            this.price.TabIndex = 12;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(35, 460);
+            this.button1.Location = new System.Drawing.Point(35, 375);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 23);
             this.button1.TabIndex = 13;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 495);
+            this.ClientSize = new System.Drawing.Size(517, 418);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.price);
+            this.Controls.Add(this.doors);
+            this.Controls.Add(this.fuel);
+            this.Controls.Add(this.description);
+            this.Controls.Add(this.consumption);
+            this.Controls.Add(this.model);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -183,7 +187,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CarForm";
             this.Text = "CarForm";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,12 +202,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox model;
+        private System.Windows.Forms.TextBox consumption;
+        private System.Windows.Forms.TextBox description;
+        private System.Windows.Forms.ComboBox fuel;
+        private System.Windows.Forms.NumericUpDown doors;
+        private System.Windows.Forms.TextBox price;
         private System.Windows.Forms.Button button1;
     }
 }

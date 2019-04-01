@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KR.Controllers;
+using KR.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,43 @@ namespace KR
 {
     public partial class Profile : Form
     {
-        public Profile()
+        public Form1 parent { get; set; }
+        private RentCarController ctrl = new RentCarController();
+        private CarForm addCarForm;
+        public Profile(Form1 p)
         {
             InitializeComponent();
+            parent = p;
+            name.Text = parent.user.Name;
+            email.Text = parent.user.Email;
+            if (!parent.user.IsAdmin)
+            {
+                button1.Visible = false;
+                button1.Enabled = false;
+            }
+            foreach(BookView b in ctrl.GetUserBooks(parent.user.UserId).Select(x => new BookView { BookId = x.BookId, Car = x.Car.Model, DateFinish = x.DateFinish, DateStart = x.DateStart}))
+            {
+                bookViewBindingSource.Add(b);
+                
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addCarForm = new CarForm();
+            addCarForm.parent = this;
+            addCarForm.ctrl = ctrl;
+            addCarForm.Show();
+        }
+        public void CloseForm()
+        {
+            addCarForm.Hide();
+        }
+
+        public void AddCar(Car car)
+        {
+            ctrl.Add(car);
+            CloseForm();
         }
     }
 }

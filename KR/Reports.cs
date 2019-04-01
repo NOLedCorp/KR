@@ -1,4 +1,6 @@
-﻿using KR.Models;
+﻿using KR.Controllers;
+using KR.Models;
+using KR.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,37 +16,14 @@ namespace KR
     public partial class Reports : Form
     {
         private NewReport addForm;
-        private List<Report> reports = new List<Report>()
-        {
-            new Report
-            {
-                ReportId = 1,
-                User = new User
-                {
-                    UserId = 1,
-                    Name = "Иван",
-                    Email = "email@email.com",
-                    Password = "123"
-                },
-                Text = "Отличный автомобиль",
-                Mark = 5,
-                Car = new Car
-                {
-                    CarId = 1,
-                    Consumption = 8,
-                    Description = "Норм авто",
-                    Doors = 5,
-                    Model = "VW Golf",
-                    Fuel = "Бензин",
-                    Price = 300
-                },
-                CreateDate = DateTime.Now
-            }
-        };
-        public Reports()
+        public Form1 parent;
+        private RentCarController ctrl = new RentCarController();
+        private List<Report> reports;
+        public Reports(Form1 p)
         {
             InitializeComponent();
-            foreach (Report r in reports)
+            parent = p;
+            foreach (Report r in ctrl.GetReports())
             {
 
                 this.ShowReport(r);
@@ -55,7 +34,7 @@ namespace KR
             b.Height = 40;
             b.Margin = new Padding(3, 14, 3, 3);
             b.Click += new System.EventHandler(ShowForm);
-            p.Controls.Add(b);
+            this.p.Controls.Add(b);
         }
 
         private void ShowReport(Report r)
@@ -85,9 +64,17 @@ namespace KR
         }
         private void ShowForm(object sender, EventArgs e)
         {
-            addForm = new NewReport();
-            addForm.parent = this;
-            addForm.Show();
+            if(parent.user == null)
+            {
+                parent.showForm();
+            }
+            else
+            {
+                addForm = new NewReport(this);
+                addForm.parent = this;
+                addForm.Show();
+            }
+            
         }
 
         public void CloseForm()
@@ -97,7 +84,9 @@ namespace KR
 
         public void AddReport(Report r)
         {
-            reports.Add(r);
+            r.User = parent.user;
+            ctrl.Add(r);
+            reports = ctrl.GetReports();
             p.Controls.Remove(p.Controls[p.Controls.Count - 1]);
             ShowReport(reports[reports.Count - 1]);
             Button b = new Button();

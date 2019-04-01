@@ -1,4 +1,5 @@
-﻿using KR.Models;
+﻿using KR.Controllers;
+using KR.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,14 @@ namespace KR
     public partial class NewReport : Form
     {
         public Reports parent;
+        private RentCarController ctrl = new RentCarController();
         private int Mark = -1;
-        public NewReport()
+        public NewReport(Reports parent)
         {
             InitializeComponent();
+            this.parent = parent;
+            textBox1.Text = parent.parent.user.Name;
+            textBox2.Text = parent.parent.user.Email;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,14 +38,8 @@ namespace KR
             }
             parent.AddReport(new Report
             {
-                ReportId = 1,
-                User = new User
-                {
-                    UserId = 2,
-                    Name = textBox1.Text,
-                    Email = textBox2.Text,
-                    Password = "123"
-                },
+                ReportId = ctrl.GetNewReportId(),
+                User = null,
                 Text = richTextBox1.Text,
                 Mark = Mark,
                 Car = new Car
