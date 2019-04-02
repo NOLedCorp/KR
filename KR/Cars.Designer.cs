@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.consMore12 = new System.Windows.Forms.CheckBox();
+            this.cons12 = new System.Windows.Forms.CheckBox();
+            this.cons10 = new System.Windows.Forms.CheckBox();
+            this.cons8 = new System.Windows.Forms.CheckBox();
+            this.cons6 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.deisel = new System.Windows.Forms.CheckBox();
+            this.patrol = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -72,11 +72,11 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.checkBox7);
-            this.groupBox4.Controls.Add(this.checkBox6);
-            this.groupBox4.Controls.Add(this.checkBox5);
-            this.groupBox4.Controls.Add(this.checkBox4);
-            this.groupBox4.Controls.Add(this.checkBox3);
+            this.groupBox4.Controls.Add(this.consMore12);
+            this.groupBox4.Controls.Add(this.cons12);
+            this.groupBox4.Controls.Add(this.cons10);
+            this.groupBox4.Controls.Add(this.cons8);
+            this.groupBox4.Controls.Add(this.cons6);
             this.groupBox4.Location = new System.Drawing.Point(231, 28);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(265, 108);
@@ -84,65 +84,70 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Расход";
             // 
-            // checkBox7
+            // consMore12
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox7.Location = new System.Drawing.Point(172, 48);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(55, 24);
-            this.checkBox7.TabIndex = 4;
-            this.checkBox7.Text = ">12";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.consMore12.AutoSize = true;
+            this.consMore12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.consMore12.Location = new System.Drawing.Point(172, 48);
+            this.consMore12.Name = "consMore12";
+            this.consMore12.Size = new System.Drawing.Size(55, 24);
+            this.consMore12.TabIndex = 4;
+            this.consMore12.Text = ">12";
+            this.consMore12.UseVisualStyleBackColor = true;
+            this.consMore12.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
             // 
-            // checkBox6
+            // cons12
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox6.Location = new System.Drawing.Point(172, 19);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(46, 24);
-            this.checkBox6.TabIndex = 3;
-            this.checkBox6.Text = "12";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.cons12.AutoSize = true;
+            this.cons12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cons12.Location = new System.Drawing.Point(172, 19);
+            this.cons12.Name = "cons12";
+            this.cons12.Size = new System.Drawing.Size(46, 24);
+            this.cons12.TabIndex = 3;
+            this.cons12.Text = "12";
+            this.cons12.UseVisualStyleBackColor = true;
+            this.cons12.CheckedChanged += new System.EventHandler(this.cons12_CheckedChanged);
             // 
-            // checkBox5
+            // cons10
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox5.Location = new System.Drawing.Point(61, 78);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(46, 24);
-            this.checkBox5.TabIndex = 2;
-            this.checkBox5.Text = "10";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.cons10.AutoSize = true;
+            this.cons10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cons10.Location = new System.Drawing.Point(61, 78);
+            this.cons10.Name = "cons10";
+            this.cons10.Size = new System.Drawing.Size(46, 24);
+            this.cons10.TabIndex = 2;
+            this.cons10.Text = "10";
+            this.cons10.UseVisualStyleBackColor = true;
+            this.cons10.CheckedChanged += new System.EventHandler(this.cons10_CheckedChanged);
             // 
-            // checkBox4
+            // cons8
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox4.Location = new System.Drawing.Point(61, 48);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(37, 24);
-            this.checkBox4.TabIndex = 1;
-            this.checkBox4.Text = "8";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cons8.AutoSize = true;
+            this.cons8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cons8.Location = new System.Drawing.Point(61, 48);
+            this.cons8.Name = "cons8";
+            this.cons8.Size = new System.Drawing.Size(37, 24);
+            this.cons8.TabIndex = 1;
+            this.cons8.Text = "8";
+            this.cons8.UseVisualStyleBackColor = true;
+            this.cons8.CheckedChanged += new System.EventHandler(this.cons8_CheckedChanged);
             // 
-            // checkBox3
+            // cons6
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox3.Location = new System.Drawing.Point(61, 19);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(37, 24);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "6";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cons6.AutoSize = true;
+            this.cons6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cons6.Location = new System.Drawing.Point(61, 19);
+            this.cons6.Name = "cons6";
+            this.cons6.Size = new System.Drawing.Size(37, 24);
+            this.cons6.TabIndex = 0;
+            this.cons6.Text = "6";
+            this.cons6.UseVisualStyleBackColor = true;
+            this.cons6.CheckedChanged += new System.EventHandler(this.cons6_CheckedChanged);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox2);
-            this.groupBox3.Controls.Add(this.checkBox1);
+            this.groupBox3.Controls.Add(this.deisel);
+            this.groupBox3.Controls.Add(this.patrol);
             this.groupBox3.Location = new System.Drawing.Point(29, 28);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(175, 108);
@@ -150,28 +155,29 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Тип топлива";
             // 
-            // checkBox2
+            // deisel
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox2.Location = new System.Drawing.Point(44, 59);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(85, 24);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Дизель";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.deisel.AutoSize = true;
+            this.deisel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.deisel.Location = new System.Drawing.Point(44, 59);
+            this.deisel.Name = "deisel";
+            this.deisel.Size = new System.Drawing.Size(85, 24);
+            this.deisel.TabIndex = 1;
+            this.deisel.Text = "Дизель";
+            this.deisel.UseVisualStyleBackColor = true;
+            this.deisel.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // checkBox1
+            // patrol
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkBox1.Location = new System.Drawing.Point(44, 29);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(83, 24);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Бензин";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.patrol.AutoSize = true;
+            this.patrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.patrol.Location = new System.Drawing.Point(44, 29);
+            this.patrol.Name = "patrol";
+            this.patrol.Size = new System.Drawing.Size(83, 24);
+            this.patrol.TabIndex = 0;
+            this.patrol.Text = "Бензин";
+            this.patrol.UseVisualStyleBackColor = true;
+            this.patrol.CheckedChanged += new System.EventHandler(this.patrol_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -298,13 +304,13 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox consMore12;
+        private System.Windows.Forms.CheckBox cons12;
+        private System.Windows.Forms.CheckBox cons10;
+        private System.Windows.Forms.CheckBox cons8;
+        private System.Windows.Forms.CheckBox cons6;
+        private System.Windows.Forms.CheckBox deisel;
+        private System.Windows.Forms.CheckBox patrol;
         private System.Windows.Forms.DataGridViewTextBoxColumn fuelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn consumptionDataGridViewTextBoxColumn;

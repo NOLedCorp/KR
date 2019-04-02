@@ -38,11 +38,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bookViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateFinishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
@@ -103,11 +104,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 393);
+            this.groupBox2.Location = new System.Drawing.Point(0, 327);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(794, 57);
+            this.groupBox2.Size = new System.Drawing.Size(794, 123);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -142,18 +144,15 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(794, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(794, 227);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // bookViewBindingSource
-            // 
-            this.bookViewBindingSource.DataSource = typeof(KR.Models.BookView);
             // 
             // bookIdDataGridViewTextBoxColumn
             // 
             this.bookIdDataGridViewTextBoxColumn.DataPropertyName = "BookId";
             this.bookIdDataGridViewTextBoxColumn.HeaderText = "Номер заказа";
             this.bookIdDataGridViewTextBoxColumn.Name = "bookIdDataGridViewTextBoxColumn";
+            this.bookIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.bookIdDataGridViewTextBoxColumn.Width = 150;
             // 
             // carDataGridViewTextBoxColumn
@@ -168,6 +167,7 @@
             this.dateStartDataGridViewTextBoxColumn.DataPropertyName = "DateStart";
             this.dateStartDataGridViewTextBoxColumn.HeaderText = "Начало аренды";
             this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
+            this.dateStartDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateStartDataGridViewTextBoxColumn.Width = 150;
             // 
             // dateFinishDataGridViewTextBoxColumn
@@ -176,6 +176,20 @@
             this.dateFinishDataGridViewTextBoxColumn.DataPropertyName = "DateFinish";
             this.dateFinishDataGridViewTextBoxColumn.HeaderText = "Конец аренды";
             this.dateFinishDataGridViewTextBoxColumn.Name = "dateFinishDataGridViewTextBoxColumn";
+            this.dateFinishDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bookViewBindingSource
+            // 
+            this.bookViewBindingSource.DataSource = typeof(KR.Models.BookView);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(213, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(170, 32);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Изменить автомобиль";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Profile
             // 
@@ -213,5 +227,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateStartDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateFinishDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bookViewBindingSource;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -17,13 +17,12 @@ namespace KR
     {
         private NewReport addForm;
         public Form1 parent;
-        private RentCarController ctrl = new RentCarController();
         private List<Report> reports;
         public Reports(Form1 p)
         {
             InitializeComponent();
             parent = p;
-            foreach (Report r in ctrl.GetReports())
+            foreach (Report r in parent.ctrl.GetReports())
             {
 
                 this.ShowReport(r);
@@ -85,8 +84,8 @@ namespace KR
         public void AddReport(Report r)
         {
             r.User = parent.user;
-            ctrl.Add(r);
-            reports = ctrl.GetReports();
+            parent.ctrl.Add(r);
+            reports = parent.ctrl.GetReports();
             p.Controls.Remove(p.Controls[p.Controls.Count - 1]);
             ShowReport(reports[reports.Count - 1]);
             Button b = new Button();

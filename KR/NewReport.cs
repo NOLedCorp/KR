@@ -15,7 +15,6 @@ namespace KR
     public partial class NewReport : Form
     {
         public Reports parent;
-        private RentCarController ctrl = new RentCarController();
         private int Mark = -1;
         public NewReport(Reports parent)
         {
@@ -38,7 +37,7 @@ namespace KR
             }
             parent.AddReport(new Report
             {
-                ReportId = ctrl.GetNewReportId(),
+                ReportId = parent.parent.ctrl.GetNewReportId(),
                 User = null,
                 Text = richTextBox1.Text,
                 Mark = Mark,

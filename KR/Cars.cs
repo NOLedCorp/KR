@@ -18,13 +18,14 @@ namespace KR
         public Form1 parent;
         private List<Car> cars;
         private BookForm bookForm;
+        private List<Filter> filters = new List<Filter>();
         public Cars(RentCarController ctrl, Form1 parent)
         {
             this.ctrl = ctrl;
             this.parent = parent;
             InitializeComponent();
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            FillCars();
+            FillCars(cars = ctrl.GetCars());
             
         }
 
@@ -45,11 +46,20 @@ namespace KR
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-
+            var f = filters.Find(f1 => f1.Name == "Fuel" && f1.Value == "Дизель");
+            if (null == f)
+            {
+                filters.Add(new Filter { Name = "Fuel", Value = "Дизель" });
+            }
+            else
+            {
+                filters.Remove(f);
+            }
+            Filter();
         }
-        private void FillCars()
+        private void FillCars(List<Car> cars)
         {
-            cars = ctrl.GetCars();
+            carBindingSource.Clear();
             foreach (Car car in cars)
             {
                 carBindingSource.Add(car);
@@ -83,6 +93,124 @@ namespace KR
         {
             ctrl.Add(book);
             CloseForm();
+        }
+
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            var f = filters.Find(f1 => f1.Name == "Consumption" && f1.Value == "100");
+            if (null == f)
+            {
+                filters.Add(new Filter { Name = "Consumption", Value = "100" });
+            }
+            else
+            {
+                filters.Remove(f);
+            }
+            Filter();
+        }
+
+        private void patrol_CheckedChanged(object sender, EventArgs e)
+        {
+            var f = filters.Find(f1 => f1.Name == "Fuel" && f1.Value == "Бензин");
+            if (null == f)
+            {
+                filters.Add(new Filter { Name = "Fuel", Value = "Бензин" });
+            }
+            else
+            {
+                filters.Remove(f);
+            }
+            Filter();
+        }
+
+        private void cons6_CheckedChanged(object sender, EventArgs e)
+        {
+            var f = filters.Find(f1 => f1.Name == "Consumption" && f1.Value == "6");
+            if (null == f)
+            {
+                filters.Add(new Filter { Name = "Consumption", Value = "6" });
+            }
+            else
+            {
+                filters.Remove(f);
+            }
+            Filter();
+        }
+
+        private void cons8_CheckedChanged(object sender, EventArgs e)
+        {
+            var f = filters.Find(f1 => f1.Name == "Consumption" && f1.Value == "8");
+            if (null == f)
+            {
+                filters.Add(new Filter { Name = "Consumption", Value = "8" });
+            }
+            else
+            {
+                filters.Remove(f);
+            }
+            Filter();
+        }
+
+        private void cons10_CheckedChanged(object sender, EventArgs e)
+        {
+            var f = filters.Find(f1 => f1.Name == "Consumption" && f1.Value == "10");
+            if (null == f)
+            {
+                filters.Add(new Filter { Name = "Consumption", Value = "10" });
+            }
+            else
+            {
+                filters.Remove(f);
+            }
+            Filter();
+        }
+
+        private void cons12_CheckedChanged(object sender, EventArgs e)
+        {
+            var f = filters.Find(f1 => f1.Name == "Consumption" && f1.Value == "12");
+            if (null == f)
+            {
+                filters.Add(new Filter { Name = "Consumption", Value = "12" });
+            }
+            else
+            {
+                filters.Remove(f);
+            }
+            
+            Filter();
+        }
+
+        private void Filter()
+        {
+            if (filters.Count == 0)
+            {
+                FillCars(cars);
+            }
+            else
+            {
+                List<Car> result = new List<Car>();
+                foreach (Car c in cars)
+                {
+                    foreach (Filter f in filters)
+                    {
+                        if (c.Fuel == f.Value)
+                        {
+                            result.Add(c);
+                            break;
+                        }
+                        if (f.Name == "Consumption" && c.Consumption == int.Parse(f.Value))
+                        {
+                            result.Add(c);
+                            break;
+                        }
+                    }
+
+                }
+                FillCars(result);
+            }
+            
+
+            
         }
     }
 }

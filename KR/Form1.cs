@@ -18,7 +18,7 @@ namespace KR
         public UserForm enterForm;
         private Form curForm;
         public User user = null;
-        private RentCarController ctrl = new RentCarController();
+        public RentCarController ctrl = new RentCarController();
         public Form1()
         {
             InitializeComponent();

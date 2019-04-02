@@ -15,7 +15,6 @@ namespace KR
     public partial class Profile : Form
     {
         public Form1 parent { get; set; }
-        private RentCarController ctrl = new RentCarController();
         private CarForm addCarForm;
         public Profile(Form1 p)
         {
@@ -28,7 +27,7 @@ namespace KR
                 button1.Visible = false;
                 button1.Enabled = false;
             }
-            foreach(BookView b in ctrl.GetUserBooks(parent.user.UserId).Select(x => new BookView { BookId = x.BookId, Car = x.Car.Model, DateFinish = x.DateFinish, DateStart = x.DateStart}))
+            foreach(BookView b in parent.ctrl.GetUserBooks(parent.user.UserId).Select(x => new BookView { BookId = x.BookId, Car = x.Car.Model, DateFinish = x.DateFinish, DateStart = x.DateStart}))
             {
                 bookViewBindingSource.Add(b);
                 
@@ -39,7 +38,7 @@ namespace KR
         {
             addCarForm = new CarForm();
             addCarForm.parent = this;
-            addCarForm.ctrl = ctrl;
+            addCarForm.ctrl = parent.ctrl;
             addCarForm.Show();
         }
         public void CloseForm()
@@ -49,7 +48,7 @@ namespace KR
 
         public void AddCar(Car car)
         {
-            ctrl.Add(car);
+            parent.ctrl.Add(car);
             CloseForm();
         }
     }

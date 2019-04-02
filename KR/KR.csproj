@@ -70,6 +70,18 @@
     <Compile Include="Cars.Designer.cs">
       <DependentUpon>Cars.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeBook.Designer.cs">
+      <DependentUpon>ChangeBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeCar.Designer.cs">
+      <DependentUpon>ChangeCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\RentCarController.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -78,6 +90,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BookView.cs" />
+    <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\Book.cs" />
@@ -128,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cars.resx">
       <DependentUpon>Cars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeBook.resx">
+      <DependentUpon>ChangeBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

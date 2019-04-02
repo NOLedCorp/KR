@@ -15,7 +15,6 @@ namespace KR
     public partial class RegForm : Form
     {
         public UserForm parent { get; set; }
-        private RentCarController ctrl = new RentCarController();
         public RegForm()
         {
             InitializeComponent();
@@ -25,13 +24,13 @@ namespace KR
         {
             User user = new User
             {
-                UserId = ctrl.GetNewUserId(),
+                UserId = parent.parent.ctrl.GetNewUserId(),
                 Name = textBox1.Text,
                 Email = textBox2.Text,
                 Password = textBox3.Text,
-                IsAdmin = false
+                IsAdmin = true
             };
-            ctrl.Add(user);
+            parent.parent.ctrl.Add(user);
             parent.CloseForm();
         }
     }
