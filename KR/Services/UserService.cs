@@ -42,12 +42,22 @@ namespace KR.Services
         public void AddUser(User user)
         {
             Users.Add(user);
+            Save();
+
+        }
+
+        public void Save()
+        {
+            if (File.Exists("Users.xml"))
+            {
+                File.WriteAllText("Users.xml", "");
+            }
             XmlSerializer xs = new XmlSerializer(typeof(List<User>));
             FileStream fs = new FileStream("Users.xml", FileMode.OpenOrCreate);
             xs.Serialize(fs, Users);
             fs.Close();
-
         }
+
         public int GetNewUserId()
         {
             return Users.Count;

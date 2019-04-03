@@ -36,19 +36,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateFinishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button2 = new System.Windows.Forms.Button();
+            this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -104,12 +103,11 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 327);
+            this.groupBox2.Location = new System.Drawing.Point(0, 365);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(794, 123);
+            this.groupBox2.Size = new System.Drawing.Size(794, 85);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -122,10 +120,6 @@
             this.button1.Text = "Добавить автомобиль";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // bookBindingSource
-            // 
-            this.bookBindingSource.DataSource = typeof(KR.Models.Book);
             // 
             // dataGridView1
             // 
@@ -144,8 +138,9 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(794, 227);
+            this.dataGridView1.Size = new System.Drawing.Size(794, 265);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // bookIdDataGridViewTextBoxColumn
             // 
@@ -182,14 +177,9 @@
             // 
             this.bookViewBindingSource.DataSource = typeof(KR.Models.BookView);
             // 
-            // button2
+            // bookBindingSource
             // 
-            this.button2.Location = new System.Drawing.Point(213, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 32);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Изменить автомобиль";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bookBindingSource.DataSource = typeof(KR.Models.Book);
             // 
             // Profile
             // 
@@ -204,9 +194,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,6 +217,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateStartDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateFinishDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bookViewBindingSource;
-        private System.Windows.Forms.Button button2;
     }
 }

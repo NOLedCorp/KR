@@ -16,6 +16,8 @@ namespace KR
     {
         public Form1 parent { get; set; }
         private CarForm addCarForm;
+        private ChangeBook chBookForm;
+        private List<Book> books;
         public Profile(Form1 p)
         {
             InitializeComponent();
@@ -27,10 +29,18 @@ namespace KR
                 button1.Visible = false;
                 button1.Enabled = false;
             }
-            foreach(BookView b in parent.ctrl.GetUserBooks(parent.user.UserId).Select(x => new BookView { BookId = x.BookId, Car = x.Car.Model, DateFinish = x.DateFinish, DateStart = x.DateStart}))
+            ShowBooks();
+            
+        }
+
+        private void ShowBooks()
+        {
+            bookViewBindingSource.Clear();
+            books = parent.ctrl.GetUserBooks(parent.user.UserId);
+            foreach (BookView b in books.Select(x => new BookView { BookId = x.BookId, Car = x.Car.Model, DateFinish = x.DateFinish, DateStart = x.DateStart }))
             {
                 bookViewBindingSource.Add(b);
-                
+
             }
         }
 
@@ -46,10 +56,22 @@ namespace KR
             addCarForm.Hide();
         }
 
+        public void CloseChangeForm()
+        {
+            ShowBooks();
+            chBookForm.Hide();
+        }
+
         public void AddCar(Car car)
         {
             parent.ctrl.Add(car);
             CloseForm();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            chBookForm = new ChangeBook(books[e.RowIndex], this);
+            chBookForm.Show();
         }
     }
 }

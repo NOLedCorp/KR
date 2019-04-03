@@ -18,6 +18,7 @@ namespace KR
         public Form1 parent;
         private List<Car> cars;
         private BookForm bookForm;
+        private ChangeCar chCarForm;
         private List<Filter> filters = new List<Filter>();
         public Cars(RentCarController ctrl, Form1 parent)
         {
@@ -79,14 +80,27 @@ namespace KR
             }
             else
             {
-                bookForm = new BookForm(this, cars[e.RowIndex]);
-                bookForm.Show();
+                if (parent.user.IsAdmin)
+                {
+                    chCarForm = new ChangeCar(this, cars[e.RowIndex]);
+                    chCarForm.Show();
+                }
+                else
+                {
+                    bookForm = new BookForm(this, cars[e.RowIndex]);
+                    bookForm.Show();
+                }
+                
             }
         }
 
         public void CloseForm()
         {
             bookForm.Hide();
+        }
+        public void CloseCarForm()
+        {
+            chCarForm.Hide();
         }
 
         public void AddBook(Book book)

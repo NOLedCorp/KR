@@ -53,11 +53,8 @@ namespace KR.Services
         public void AddReport(Report report)
         {
             Reports.Add(report);
-            XmlSerializer xs = new XmlSerializer(typeof(List<Report>));
-            FileStream fs = new FileStream("Reports.xml", FileMode.OpenOrCreate);
-            xs.Serialize(fs, Reports);
-            fs.Close();
 
+            SaveReports();
         }
 
         public int GetNewReportId()
@@ -68,11 +65,31 @@ namespace KR.Services
         public void AddCar(Car car)
         {
             Cars.Add(car);
+            Save();
+
+        }
+
+        private void Save()
+        {
+            if (File.Exists("Cars.xml"))
+            {
+                File.WriteAllText("Cars.xml", "");
+            }
             XmlSerializer xs = new XmlSerializer(typeof(List<Car>));
             FileStream fs = new FileStream("Cars.xml", FileMode.OpenOrCreate);
             xs.Serialize(fs, Cars);
             fs.Close();
-
+        }
+        private void SaveReports()
+        {
+            if (File.Exists("Reports.xml"))
+            {
+                File.WriteAllText("Reports.xml", "");
+            }
+            XmlSerializer xs = new XmlSerializer(typeof(List<Report>));
+            FileStream fs = new FileStream("Reports.xml", FileMode.OpenOrCreate);
+            xs.Serialize(fs, Reports);
+            fs.Close();
         }
 
         public int GetNewCarId()

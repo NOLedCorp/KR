@@ -56,7 +56,15 @@ namespace KR.Controllers
         }
         public void Add(Book book)
         {
-            bs.AddBook(book);
+            bs.Add(book);
+        }
+        public void Update(Book book)
+        {
+            bs.Update(book);
+        }
+        public void Remove(Book book)
+        {
+            bs.Remove(book);
         }
         public List<Book> GetUserBooks(int UserId)
         {

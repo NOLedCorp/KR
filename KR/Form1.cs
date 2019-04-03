@@ -120,5 +120,10 @@ namespace KR
             user = ctrl.GetUser(email, password);
             CloseForm();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
