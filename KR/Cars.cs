@@ -20,14 +20,18 @@ namespace KR
         private BookForm bookForm;
         private ChangeCar chCarForm;
         private List<Filter> filters = new List<Filter>();
+        private string SortType = "Цена";
+        private bool SortDir = true;
         public Cars(RentCarController ctrl, Form1 parent)
         {
             this.ctrl = ctrl;
             this.parent = parent;
             InitializeComponent();
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            FillCars(cars = ctrl.GetCars());
-            
+            cars = ctrl.GetCars();
+            comboBox1.Text = "Цена";
+            radioButton1.Checked = true;
+            Sort();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -40,9 +44,10 @@ namespace KR
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void changeSortType(object sender, EventArgs e)
         {
-
+            SortType = comboBox1.Text;
+            Sort();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -226,6 +231,78 @@ namespace KR
             
 
             
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            SortDir = true;
+            Sort();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            SortDir = false;
+            Sort();
+        }
+
+        private void Sort()
+        {
+            switch (SortType)
+            {
+                case "Цена":
+                    {
+                        if (SortDir)
+                        {
+                            FillCars(cars.OrderBy(x => x.Price).ToList());
+                        }
+                        else
+                        {
+                            FillCars(cars.OrderByDescending(x => x.Price).ToList());
+                        }
+                        
+                        break;
+                    }
+                case "Модель":
+                    {
+                        if (SortDir)
+                        {
+                            FillCars(cars.OrderBy(x => x.Model).ToList());
+                        }
+                        else
+                        {
+                            FillCars(cars.OrderByDescending(x => x.Model).ToList());
+                        }
+
+                        break;
+                    }
+                case "Расход":
+                    {
+                        if (SortDir)
+                        {
+                            FillCars(cars.OrderBy(x => x.Consumption).ToList());
+                        }
+                        else
+                        {
+                            FillCars(cars.OrderByDescending(x => x.Consumption).ToList());
+                        }
+
+                        break;
+                    }
+                case "Двери":
+                    {
+                        if (SortDir)
+                        {
+                            FillCars(cars.OrderBy(x => x.Doors).ToList());
+                        }
+                        else
+                        {
+                            FillCars(cars.OrderByDescending(x => x.Doors).ToList());
+                        }
+
+                        break;
+                    }
+
+            }
         }
     }
 }

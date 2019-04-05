@@ -15,6 +15,7 @@ namespace KR
     public partial class NewReport : Form
     {
         public Reports parent;
+        private List<Car> cars;
         private int Mark = -1;
         public NewReport(Reports parent)
         {
@@ -22,6 +23,11 @@ namespace KR
             this.parent = parent;
             textBox1.Text = parent.parent.user.Name;
             textBox2.Text = parent.parent.user.Email;
+            cars = parent.parent.ctrl.GetCars();
+            foreach (Car c in cars)
+            {
+                comboBox1.Items.Add(c.Model);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,16 +47,7 @@ namespace KR
                 User = null,
                 Text = richTextBox1.Text,
                 Mark = Mark,
-                Car = new Car
-                {
-                    CarId = 1,
-                    Consumption = 8,
-                    Description = "Норм авто",
-                    Doors = 5,
-                    Model = "VW Golf",
-                    Fuel = "Бензин",
-                    Price = 300
-                },
+                Car = cars.Find(x => x.Model==comboBox1.Text),
                 CreateDate = DateTime.Now
             });
             parent.CloseForm();

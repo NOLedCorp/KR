@@ -19,11 +19,11 @@ namespace KR.Services
 
         public List<User> GetUsers()
         {
-            if (File.Exists("Users.xml"))
+            if (File.Exists("../../../Users.xml"))
             {
                 // Десериализуем
                 XmlSerializer xs = new XmlSerializer(typeof(List<User>));
-                FileStream fs = new FileStream("Users.xml", FileMode.Open);
+                FileStream fs = new FileStream("../../../Users.xml", FileMode.Open);
                 var Users = (List<User>)xs.Deserialize(fs);
                 fs.Close();
                 return Users;
@@ -89,12 +89,12 @@ namespace KR.Services
 
         public void Save()
         {
-            if (File.Exists("Users.xml"))
+            if (File.Exists("../../../Users.xml"))
             {
-                File.WriteAllText("Users.xml", "");
+                File.WriteAllText("../../../Users.xml", "");
             }
             XmlSerializer xs = new XmlSerializer(typeof(List<User>));
-            FileStream fs = new FileStream("Users.xml", FileMode.OpenOrCreate);
+            FileStream fs = new FileStream("../../../Users.xml", FileMode.OpenOrCreate);
             xs.Serialize(fs, Users);
             fs.Close();
         }

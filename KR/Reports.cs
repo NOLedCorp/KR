@@ -45,20 +45,24 @@ namespace KR
             
             rr.Text = r.User.Name;
 
-
+            Label car = new Label();
+            car.Dock = DockStyle.Bottom;
             Label date = new Label();
             date.Dock = DockStyle.Bottom;
+            
             Label l = new Label();
             l.Dock = DockStyle.Fill;
             l.Font = new Font("Microsoft Sans Serif", 12);
             date.Font = new Font("Microsoft Sans Serif", 10);
+            car.Font = new Font("Microsoft Sans Serif", 10);
             l.Text = r.Text;
             date.Text = "Дата: " + r.CreateDate.ToShortDateString();
-            
+            car.Text = "Автомобиль: " + r.Car.Model;
             pp.Controls.Add(l);
             pp.AutoScroll = true;
             rr.Controls.Add(pp);
             rr.Controls.Add(date);
+            rr.Controls.Add(car);
             p.Controls.Add(rr);
         }
         private void ShowForm(object sender, EventArgs e)

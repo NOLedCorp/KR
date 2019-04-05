@@ -33,6 +33,7 @@
             this.отзывыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.личныйКабинетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оСебеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,8 @@
             this.автомобилиToolStripMenuItem,
             this.отзывыToolStripMenuItem,
             this.личныйКабинетToolStripMenuItem,
-            this.оСебеToolStripMenuItem});
+            this.оСебеToolStripMenuItem,
+            this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MdiWindowListItem = this.автомобилиToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
@@ -75,9 +77,16 @@
             // оСебеToolStripMenuItem
             // 
             this.оСебеToolStripMenuItem.Name = "оСебеToolStripMenuItem";
-            this.оСебеToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.оСебеToolStripMenuItem.Text = "О себе";
+            this.оСебеToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.оСебеToolStripMenuItem.Text = "Об авторе";
             this.оСебеToolStripMenuItem.Click += new System.EventHandler(this.оСебеToolStripMenuItem_Click);
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -104,6 +113,7 @@
         private System.Windows.Forms.ToolStripMenuItem отзывыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem личныйКабинетToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оСебеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
     }
 }
 

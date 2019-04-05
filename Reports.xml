@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ArrayOfReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Report>
+    <ReportId>0</ReportId>
+    <Car>
+      <CarId>1</CarId>
+      <Model>VW Polo</Model>
+      <Price>1000</Price>
+      <Doors>5</Doors>
+      <Consumption>6</Consumption>
+      <Description>Большой багажник!</Description>
+      <Fuel>Дизель</Fuel>
+    </Car>
+    <User>
+      <UserId>0</UserId>
+      <Name>Admin</Name>
+      <Email>adm</Email>
+      <Password>adm</Password>
+      <IsAdmin>true</IsAdmin>
+    </User>
+    <Text>Четко покатались!</Text>
+    <Mark>4</Mark>
+    <CreateDate>2019-04-05T13:52:36.5305409+03:00</CreateDate>
+  </Report>
+</ArrayOfReport>
