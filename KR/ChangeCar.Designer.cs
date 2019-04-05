@@ -200,7 +200,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ChangeCar";
-            this.Text = "ChangeCar";
+            this.Text = "Изменение автомобиля";
             ((System.ComponentModel.ISupportInitialize)(this.doors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

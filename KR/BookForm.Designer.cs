@@ -161,7 +161,7 @@
             this.Controls.Add(this.Email);
             this.Controls.Add(this.label1);
             this.Name = "BookForm";
-            this.Text = "BookForm";
+            this.Text = "Бронирование автомобиля";
             this.ResumeLayout(false);
             this.PerformLayout();
 

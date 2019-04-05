@@ -7,4 +7,11 @@
     <Password>adm</Password>
     <IsAdmin>true</IsAdmin>
   </User>
+  <User>
+    <UserId>1</UserId>
+    <Name>Иван</Name>
+    <Email>ivan</Email>
+    <Password>ivan</Password>
+    <IsAdmin>true</IsAdmin>
+  </User>
 </ArrayOfUser>

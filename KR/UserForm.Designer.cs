@@ -114,7 +114,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UserForm";
+            this.Text = "Вход";
             this.ResumeLayout(false);
             this.PerformLayout();
 

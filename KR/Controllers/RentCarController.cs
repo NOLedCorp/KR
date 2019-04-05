@@ -27,6 +27,11 @@ namespace KR.Controllers
             return us.GetUser();
         }
 
+        public List<Book> GetBooks()
+        {
+            return bs.Get();
+        }
+
         public int GetNewUserId()
         {
             return us.GetNewUserId();

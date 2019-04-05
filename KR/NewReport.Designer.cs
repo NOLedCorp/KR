@@ -225,7 +225,7 @@
             this.Controls.Add(this.label1);
             this.Name = "NewReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewReport";
+            this.Text = "Добавление отзыва";
             this.ResumeLayout(false);
             this.PerformLayout();
 

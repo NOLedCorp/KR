@@ -36,12 +36,17 @@ namespace KR
         private void ShowBooks()
         {
             bookViewBindingSource.Clear();
-            books = parent.ctrl.GetUserBooks(parent.user.UserId);
-            foreach (BookView b in books.Select(x => new BookView { BookId = x.BookId, Car = x.Car.Model, DateFinish = x.DateFinish, DateStart = x.DateStart }))
+            if (parent.user.IsAdmin)
             {
-                bookViewBindingSource.Add(b);
-
+                books = parent.ctrl.GetBooks();
             }
+            else
+            {
+                books = parent.ctrl.GetUserBooks(parent.user.UserId);
+            }
+            
+            bookViewBindingSource.DataSource = books.Select(x => new BookView { BookId = x.BookId, Car = x.Car.Model, DateFinish = x.DateFinish, DateStart = x.DateStart });
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,8 +75,7 @@ namespace KR
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            chBookForm = new ChangeBook(books[e.RowIndex], this);
-            chBookForm.Show();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -79,6 +83,12 @@ namespace KR
             parent.user = null;
             parent.ctrl.Exit();
             parent.автомобилиToolStripMenuItem_Click();
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            chBookForm = new ChangeBook(books[e.RowIndex], this);
+            chBookForm.Show();
         }
     }
 }

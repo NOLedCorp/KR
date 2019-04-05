@@ -135,7 +135,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Name = "ChangeBook";
-            this.Text = "ChangeBook";
+            this.Text = "Изменение брони";
             this.ResumeLayout(false);
             this.PerformLayout();
 

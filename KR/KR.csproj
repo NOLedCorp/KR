@@ -90,7 +90,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\BookView.cs" />
+    <Compile Include="Models\CarRating.cs" />
     <Compile Include="Models\Filter.cs" />
+    <Compile Include="Models\Profit.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Report.cs" />
     <Compile Include="Models\Book.cs" />
@@ -124,6 +126,12 @@
     <Compile Include="Services\BookService.cs" />
     <Compile Include="Services\CarService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,12 +180,17 @@
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\KR.Models.Book.datasource" />
     <None Include="Properties\DataSources\KR.Models.BookView.datasource" />
     <None Include="Properties\DataSources\KR.Models.Car.datasource" />
+    <None Include="Properties\DataSources\KR.Models.CarRating.datasource" />
+    <None Include="Properties\DataSources\KR.Models.Profit.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

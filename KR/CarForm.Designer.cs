@@ -186,7 +186,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CarForm";
-            this.Text = "CarForm";
+            this.Text = "Добавление автомобиля";
             ((System.ComponentModel.ISupportInitialize)(this.doors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

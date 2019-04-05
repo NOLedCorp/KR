@@ -110,7 +110,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegForm";
+            this.Text = "Регистрация";
             this.ResumeLayout(false);
             this.PerformLayout();
 
