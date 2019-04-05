@@ -73,5 +73,12 @@ namespace KR
             chBookForm = new ChangeBook(books[e.RowIndex], this);
             chBookForm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            parent.user = null;
+            parent.ctrl.Exit();
+            parent.автомобилиToolStripMenuItem_Click();
+        }
     }
 }

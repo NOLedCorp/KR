@@ -36,8 +36,15 @@ namespace KR
             car.Consumption = int.Parse(consumption.Text);
             car.Fuel = fuel.Text;
             car.Description = description.Text;
+            parent.parent.ctrl.Update(car);
+            parent.CloseCarForm();
 
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            parent.parent.ctrl.Remove(car);
+            parent.CloseCarForm();
         }
     }
 }

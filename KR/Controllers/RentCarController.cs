@@ -17,14 +17,24 @@ namespace KR.Controllers
         {
             us.AddUser(user);
         }
-        public User GetUser(string email, string password)
+        public User GetUser(string email, string password, bool save = false)
         {
-            return us.GetUser(email, password);
+            return us.GetUser(email, password, save);
+        }
+
+        public User GetU()
+        {
+            return us.GetUser();
         }
 
         public int GetNewUserId()
         {
             return us.GetNewUserId();
+        }
+
+        public void Exit()
+        {
+            us.Exit();
         }
         public int GetNewReportId()
         {
@@ -62,9 +72,17 @@ namespace KR.Controllers
         {
             bs.Update(book);
         }
+        public void Update(Car car)
+        {
+            cs.Update(car);
+        }
         public void Remove(Book book)
         {
             bs.Remove(book);
+        }
+        public void Remove(Car car)
+        {
+            cs.Remove(car);
         }
         public List<Book> GetUserBooks(int UserId)
         {

@@ -33,10 +33,31 @@ namespace KR.Services
                 return new List<User>();
             }
         }
-        public User GetUser(string email, string password)
+        public User GetUser(string email, string password, bool save = false)
         {
             var p = Users.Find(u => u.Email == email && u.Password == password);
+            if (save)
+            {
+                SaveUser(p);
+            }
             return p;
+        }
+
+        public User GetUser()
+        {
+            if (File.Exists("User.xml"))
+            {
+                // Десериализуем
+                XmlSerializer xs = new XmlSerializer(typeof(User));
+                FileStream fs = new FileStream("User.xml", FileMode.Open);
+                var User = (User)xs.Deserialize(fs);
+                fs.Close();
+                return User;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public void AddUser(User user)
@@ -44,6 +65,26 @@ namespace KR.Services
             Users.Add(user);
             Save();
 
+        }
+
+        public void SaveUser(User user)
+        {
+            if (File.Exists("User.xml"))
+            {
+                File.WriteAllText("User.xml", "");
+            }
+            XmlSerializer xs = new XmlSerializer(typeof(User));
+            FileStream fs = new FileStream("User.xml", FileMode.OpenOrCreate);
+            xs.Serialize(fs, user);
+            fs.Close();
+        }
+
+        public void Exit()
+        {
+            if (File.Exists("User.xml"))
+            {
+                File.Delete("User.xml");
+            }
         }
 
         public void Save()

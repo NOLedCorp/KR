@@ -30,9 +30,10 @@ namespace KR
             carsForm.Dock = DockStyle.Fill;
             this.curForm = carsForm;
             curForm.Show();
+            user = ctrl.GetU();
         }
 
-        private void автомобилиToolStripMenuItem_Click(object sender, EventArgs e)
+        public void автомобилиToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
             if (curForm is Cars)
             {
@@ -115,9 +116,9 @@ namespace KR
             curForm.Show();
         }
 
-        public void EnterUser(string email, string password)
+        public void EnterUser(string email, string password, bool save)
         {
-            user = ctrl.GetUser(email, password);
+            user = ctrl.GetUser(email, password, save);
             CloseForm();
         }
 

@@ -100,6 +100,7 @@ namespace KR
         }
         public void CloseCarForm()
         {
+            FillCars(cars = ctrl.GetCars());
             chCarForm.Hide();
         }
 

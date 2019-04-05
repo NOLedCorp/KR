@@ -37,7 +37,7 @@ namespace KR
 
         private void button2_Click(object sender, EventArgs e)
         {
-            parent.EnterUser(textBox1.Text, textBox2.Text);
+            parent.EnterUser(textBox1.Text, textBox2.Text, checkBox1.Checked);
         }
     }
 }

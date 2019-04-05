@@ -57,6 +57,18 @@ namespace KR.Services
             SaveReports();
         }
 
+        public void Update(Car car)
+        {
+            var c = Cars.Find(x => x.CarId == car.CarId);
+            c.Model = car.Model;
+            c.Price = car.Price;
+            c.Doors = car.Doors;
+            c.Consumption = car.Consumption;
+            c.Fuel = car.Fuel;
+            c.Description = car.Description;
+            Save();
+        }
+
         public int GetNewReportId()
         {
             return Reports.Count;
@@ -90,6 +102,13 @@ namespace KR.Services
             FileStream fs = new FileStream("Reports.xml", FileMode.OpenOrCreate);
             xs.Serialize(fs, Reports);
             fs.Close();
+        }
+
+        public void Remove(Car car)
+        {
+            var i = Cars.Select(x => x.CarId).ToList().IndexOf(car.CarId);
+            Cars.RemoveAt(i);
+            Save();
         }
 
         public int GetNewCarId()
