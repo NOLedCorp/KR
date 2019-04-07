@@ -32,6 +32,13 @@ namespace KR
             if (dateTimePicker1.Value < DateTime.Now || dateTimePicker2.Value <= dateTimePicker1.Value)
             {
                 note.Visible = true;
+                note2.Visible = false;
+                return;
+            }
+            if(!parent.ctrl.CheckCarBook(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date, car.CarId))
+            {
+                note2.Visible = true;
+                note.Visible = false;
                 return;
             }
             Book book = new Book

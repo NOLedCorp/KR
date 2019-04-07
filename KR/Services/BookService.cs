@@ -35,6 +35,11 @@ namespace KR.Services
             }
         }
 
+        public List<Book> GetCarBooks(int carId)
+        {
+            return Books.FindAll(b => b.Car.CarId == carId);
+        }
+
         public List<Book> GetUserBooks(int userId)
         {
             return Books.FindAll(b => b.User.UserId == userId);
@@ -45,6 +50,23 @@ namespace KR.Services
             Books.Add(book);
             Save();
 
+        }
+
+        public bool CheckCarBook(DateTime dateStart, DateTime dateFinish, int carId)
+        {
+            var books = GetCarBooks(carId);
+            foreach(Book b in books)
+            {
+                if(b.DateStart<dateStart && b.DateFinish > dateStart)
+                {
+                    return false;
+                }
+                if (b.DateStart < dateFinish && b.DateFinish > dateStart)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public void Update(Book book)

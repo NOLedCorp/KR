@@ -30,10 +30,8 @@ namespace KR
             InitializeComponent();
             label1.TextAlign = ContentAlignment.MiddleCenter;
             cars = ctrl.GetCars();
-            curCars = cars;
             comboBox1.Text = "Цена";
             radioButton1.Checked = true;
-            Sort();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -68,7 +66,6 @@ namespace KR
         private void FillCars(List<Car> cars)
         {
             curCars = cars;
-            carBindingSource.Clear();
             carBindingSource.DataSource = cars;
         }
 
@@ -212,25 +209,25 @@ namespace KR
             }
             else
             {
-                List<Car> result = new List<Car>();
+                curCars = new List<Car>();
                 foreach (Car c in cars)
                 {
                     foreach (Filter f in filters)
                     {
                         if (c.Fuel == f.Value)
                         {
-                            result.Add(c);
+                            curCars.Add(c);
                             break;
                         }
                         if (f.Name == "Consumption" && c.Consumption == int.Parse(f.Value))
                         {
-                            result.Add(c);
+                            curCars.Add(c);
                             break;
                         }
                     }
 
                 }
-                FillCars(result);
+                FillCars(curCars);
             }
             
 
@@ -292,7 +289,7 @@ namespace KR
 
                         break;
                     }
-                case "Двери":
+                case "Количество дверей":
                     {
                         if (SortDir)
                         {

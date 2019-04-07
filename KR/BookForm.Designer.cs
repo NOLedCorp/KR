@@ -41,6 +41,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.note = new System.Windows.Forms.Label();
+            this.note2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -161,11 +162,23 @@
             this.note.Text = "Указаны некорректные даты";
             this.note.Visible = false;
             // 
+            // note2
+            // 
+            this.note2.AutoSize = true;
+            this.note2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.note2.Location = new System.Drawing.Point(27, 322);
+            this.note2.Name = "note2";
+            this.note2.Size = new System.Drawing.Size(134, 13);
+            this.note2.TabIndex = 16;
+            this.note2.Text = "Выбранные даты заняты";
+            this.note2.Visible = false;
+            // 
             // BookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(332, 344);
+            this.Controls.Add(this.note2);
             this.Controls.Add(this.note);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox4);
@@ -201,5 +214,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label note;
+        private System.Windows.Forms.Label note2;
     }
 }
