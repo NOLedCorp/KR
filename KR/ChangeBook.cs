@@ -24,7 +24,7 @@ namespace KR
             textBox4.Text = book.Car.Model;
             dateTimePicker1.Value = book.DateStart;
             dateTimePicker2.Value = book.DateFinish;
-            if (book.DateStart > DateTime.Now || (book.DateStart - DateTime.Now).Days < 7)
+            if (book.DateStart < DateTime.Now || (book.DateStart - DateTime.Now).Days < 7)
             {
                 dateTimePicker1.Enabled = false;
                 dateTimePicker2.Enabled = false;

@@ -34,6 +34,17 @@ namespace KR.Services
                 return new List<Report>();
             }
         }
+
+        public List<Report> GetCarReports(int CarId)
+        {
+            return Reports.FindAll(r => r.Car.CarId == CarId);
+        }
+
+        public List<int> GetCarMarks(int CarId)
+        {
+            return Reports.FindAll(r => r.Car.CarId == CarId).Select(r => r.Mark).ToList();
+        }
+
         public List<Car> GetCars()
         {
             if (File.Exists("../../../Cars.xml"))

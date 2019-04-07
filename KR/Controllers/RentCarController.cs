@@ -53,6 +53,16 @@ namespace KR.Controllers
         {
             return cs.GetReports();
         }
+        public List<Report> GetCarReports(int CarId)
+        {
+            return cs.GetCarReports(CarId);
+        }
+
+        public List<int> GetCarMarks(int CarId)
+        {
+            return cs.GetCarMarks(CarId);
+        }
+
         public void Add(Car c)
         {
             cs.AddCar(c);

@@ -28,6 +28,8 @@ namespace KR
             {
                 button1.Visible = false;
                 button1.Enabled = false;
+                button2.Visible = false;
+                button2.Enabled = false; 
             }
             ShowBooks();
             
@@ -89,6 +91,12 @@ namespace KR
         {
             chBookForm = new ChangeBook(books[e.RowIndex], this);
             chBookForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var st = new Statistics();
+            st.Show();
         }
     }
 }

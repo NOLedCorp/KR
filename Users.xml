@@ -14,4 +14,18 @@
     <Password>ivan</Password>
     <IsAdmin>true</IsAdmin>
   </User>
+  <User>
+    <UserId>2</UserId>
+    <Name>Иван</Name>
+    <Email>ivan@ivan.ru</Email>
+    <Password>123</Password>
+    <IsAdmin>true</IsAdmin>
+  </User>
+  <User>
+    <UserId>3</UserId>
+    <Name>Ванька</Name>
+    <Email>vvv</Email>
+    <Password>vvv</Password>
+    <IsAdmin>false</IsAdmin>
+  </User>
 </ArrayOfUser>

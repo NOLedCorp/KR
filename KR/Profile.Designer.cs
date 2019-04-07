@@ -44,6 +44,7 @@
             this.dateFinishDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -118,6 +119,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox2.Location = new System.Drawing.Point(0, 365);
@@ -196,6 +198,16 @@
             // 
             this.bookBindingSource.DataSource = typeof(KR.Models.Book);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(225, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 32);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Статистика";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,5 +245,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateFinishDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bookViewBindingSource;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

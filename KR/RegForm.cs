@@ -28,7 +28,7 @@ namespace KR
                 Name = textBox1.Text,
                 Email = textBox2.Text,
                 Password = textBox3.Text,
-                IsAdmin = true
+                IsAdmin = false
             };
             parent.parent.ctrl.Add(user);
             parent.CloseForm();

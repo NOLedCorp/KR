@@ -8,9 +8,9 @@ namespace KR.Models
 {
     class CarRating
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Model { get; set; }
         public int ReportsNumber { get; set; }
-        public int Mark { get; set; }
+        public double Mark { get; set; }
     }
 }

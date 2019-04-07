@@ -24,7 +24,7 @@ namespace KR.Services
             {
                 // Десериализуем
                 XmlSerializer xs = new XmlSerializer(typeof(List<Book>));
-                FileStream fs = new FileStream("Books.xml", FileMode.Open);
+                FileStream fs = new FileStream("../../../Books.xml", FileMode.Open);
                 var Books = (List<Book>)xs.Deserialize(fs);
                 fs.Close();
                 return Books;

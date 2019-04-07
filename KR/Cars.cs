@@ -17,6 +17,7 @@ namespace KR
         public RentCarController ctrl;
         public Form1 parent;
         private List<Car> cars;
+        private List<Car> curCars;
         private BookForm bookForm;
         private ChangeCar chCarForm;
         private List<Filter> filters = new List<Filter>();
@@ -29,6 +30,7 @@ namespace KR
             InitializeComponent();
             label1.TextAlign = ContentAlignment.MiddleCenter;
             cars = ctrl.GetCars();
+            curCars = cars;
             comboBox1.Text = "Цена";
             radioButton1.Checked = true;
             Sort();
@@ -65,11 +67,9 @@ namespace KR
         }
         private void FillCars(List<Car> cars)
         {
+            curCars = cars;
             carBindingSource.Clear();
-            foreach (Car car in cars)
-            {
-                carBindingSource.Add(car);
-            }
+            carBindingSource.DataSource = cars;
         }
 
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
@@ -79,6 +79,10 @@ namespace KR
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (e.RowIndex<0)
+            {
+                return;
+            }
             if(parent.user == null)
             {
                 parent.showForm();
@@ -87,12 +91,12 @@ namespace KR
             {
                 if (parent.user.IsAdmin)
                 {
-                    chCarForm = new ChangeCar(this, cars[e.RowIndex]);
+                    chCarForm = new ChangeCar(this, curCars[e.RowIndex]);
                     chCarForm.Show();
                 }
                 else
                 {
-                    bookForm = new BookForm(this, cars[e.RowIndex]);
+                    bookForm = new BookForm(this, curCars[e.RowIndex]);
                     bookForm.Show();
                 }
                 
