@@ -28,8 +28,8 @@ namespace KR
             {
                 button1.Visible = false;
                 button1.Enabled = false;
-                button2.Visible = false;
-                button2.Enabled = false; 
+                button3.Visible = false;
+                button3.Enabled = false; 
             }
             ShowBooks();
             

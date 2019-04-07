@@ -22,6 +22,11 @@ namespace KR
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
+            {
+                note.Visible = true;
+                return;
+            }
             User user = new User
             {
                 UserId = parent.parent.ctrl.GetNewUserId(),
@@ -32,6 +37,13 @@ namespace KR
             };
             parent.parent.ctrl.Add(user);
             parent.CloseForm();
+
+        }
+
+        private void clearNote(object sender, EventArgs e)
+        {
+            note.Visible = false;
+
         }
     }
 }

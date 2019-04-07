@@ -23,17 +23,33 @@ namespace KR
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(model.Text == "" ||
+                price.Value == 0 ||
+                doors.Value==0 ||
+                description.Text == "" ||
+                consumption.Value == 0 ||
+                fuel.Text == "")
+            {
+                note.Visible = true;
+                return;
+            }
             Car car = new Car
             {
                 CarId = ctrl.GetNewCarId(),
                 Model = model.Text,
-                Price = double.Parse(price.Text),
+                Price = price.Value,
                 Doors = (int)doors.Value,
                 Description = description.Text,
-                Consumption = int.Parse(consumption.Text),
+                Consumption = consumption.Value,
                 Fuel = fuel.Text
             };
             parent.AddCar(car);
+        }
+
+        private void clearNote(object sender = null, EventArgs e = null)
+        {
+            note.Visible = false;
+
         }
     }
 }

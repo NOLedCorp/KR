@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.price = new System.Windows.Forms.TextBox();
             this.doors = new System.Windows.Forms.NumericUpDown();
             this.fuel = new System.Windows.Forms.ComboBox();
             this.description = new System.Windows.Forms.TextBox();
-            this.consumption = new System.Windows.Forms.TextBox();
             this.model = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,7 +41,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.price = new System.Windows.Forms.NumericUpDown();
+            this.consumption = new System.Windows.Forms.NumericUpDown();
+            this.note = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.doors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.price)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consumption)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -56,19 +59,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // price
-            // 
-            this.price.Location = new System.Drawing.Point(56, 138);
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(247, 20);
-            this.price.TabIndex = 26;
-            // 
             // doors
             // 
             this.doors.Location = new System.Drawing.Point(56, 190);
             this.doors.Name = "doors";
             this.doors.Size = new System.Drawing.Size(247, 20);
             this.doors.TabIndex = 25;
+            this.doors.ValueChanged += new System.EventHandler(this.clearNote);
             // 
             // fuel
             // 
@@ -80,6 +77,7 @@
             this.fuel.Name = "fuel";
             this.fuel.Size = new System.Drawing.Size(180, 21);
             this.fuel.TabIndex = 24;
+            this.fuel.SelectedIndexChanged += new System.EventHandler(this.clearNote);
             // 
             // description
             // 
@@ -88,13 +86,7 @@
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(446, 120);
             this.description.TabIndex = 23;
-            // 
-            // consumption
-            // 
-            this.consumption.Location = new System.Drawing.Point(322, 84);
-            this.consumption.Name = "consumption";
-            this.consumption.Size = new System.Drawing.Size(180, 20);
-            this.consumption.TabIndex = 22;
+            this.description.TextChanged += new System.EventHandler(this.clearNote);
             // 
             // model
             // 
@@ -102,6 +94,7 @@
             this.model.Name = "model";
             this.model.Size = new System.Drawing.Size(247, 20);
             this.model.TabIndex = 21;
+            this.model.TextChanged += new System.EventHandler(this.clearNote);
             // 
             // label7
             // 
@@ -179,18 +172,58 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // price
+            // 
+            this.price.DecimalPlaces = 2;
+            this.price.Location = new System.Drawing.Point(56, 137);
+            this.price.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(247, 20);
+            this.price.TabIndex = 30;
+            this.price.ValueChanged += new System.EventHandler(this.clearNote);
+            // 
+            // consumption
+            // 
+            this.consumption.DecimalPlaces = 2;
+            this.consumption.Location = new System.Drawing.Point(322, 84);
+            this.consumption.Maximum = new decimal(new int[] {
+            10900,
+            0,
+            0,
+            0});
+            this.consumption.Name = "consumption";
+            this.consumption.Size = new System.Drawing.Size(180, 20);
+            this.consumption.TabIndex = 29;
+            this.consumption.ValueChanged += new System.EventHandler(this.clearNote);
+            // 
+            // note
+            // 
+            this.note.AutoSize = true;
+            this.note.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.note.Location = new System.Drawing.Point(211, 399);
+            this.note.Name = "note";
+            this.note.Size = new System.Drawing.Size(176, 13);
+            this.note.TabIndex = 31;
+            this.note.Text = "Поля не могут остаться пустыми";
+            this.note.Visible = false;
+            // 
             // ChangeCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 450);
+            this.Controls.Add(this.note);
+            this.Controls.Add(this.price);
+            this.Controls.Add(this.consumption);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.price);
             this.Controls.Add(this.doors);
             this.Controls.Add(this.fuel);
             this.Controls.Add(this.description);
-            this.Controls.Add(this.consumption);
             this.Controls.Add(this.model);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -202,6 +235,8 @@
             this.Name = "ChangeCar";
             this.Text = "Изменение автомобиля";
             ((System.ComponentModel.ISupportInitialize)(this.doors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.price)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consumption)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,11 +245,9 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox price;
         private System.Windows.Forms.NumericUpDown doors;
         private System.Windows.Forms.ComboBox fuel;
         private System.Windows.Forms.TextBox description;
-        private System.Windows.Forms.TextBox consumption;
         private System.Windows.Forms.TextBox model;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -224,5 +257,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NumericUpDown price;
+        private System.Windows.Forms.NumericUpDown consumption;
+        private System.Windows.Forms.Label note;
     }
 }

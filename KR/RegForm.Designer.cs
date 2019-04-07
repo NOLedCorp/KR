@@ -35,6 +35,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.note = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -61,6 +62,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(175, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.clearNote);
             // 
             // textBox2
             // 
@@ -68,6 +70,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(175, 20);
             this.textBox2.TabIndex = 3;
+            this.textBox2.TextChanged += new System.EventHandler(this.clearNote);
             // 
             // textBox3
             // 
@@ -76,6 +79,7 @@
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(175, 20);
             this.textBox3.TabIndex = 4;
+            this.textBox3.TextChanged += new System.EventHandler(this.clearNote);
             // 
             // label3
             // 
@@ -96,11 +100,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // note
+            // 
+            this.note.AutoSize = true;
+            this.note.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.note.Location = new System.Drawing.Point(13, 191);
+            this.note.Name = "note";
+            this.note.Size = new System.Drawing.Size(109, 13);
+            this.note.TabIndex = 7;
+            this.note.Text = "Заполните все поля";
+            this.note.Visible = false;
+            // 
             // RegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(206, 198);
+            this.ClientSize = new System.Drawing.Size(206, 213);
+            this.Controls.Add(this.note);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox3);
@@ -125,5 +141,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label note;
     }
 }

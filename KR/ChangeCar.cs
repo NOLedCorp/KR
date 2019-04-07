@@ -21,19 +21,29 @@ namespace KR
             this.car = car;
             InitializeComponent();
             model.Text = car.Model;
-            price.Text = car.Price.ToString();
+            price.Value = car.Price;
             doors.Value = car.Doors;
-            consumption.Text = car.Consumption.ToString();
+            consumption.Value = car.Consumption;
             fuel.Text = car.Fuel;
             description.Text = car.Description;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (model.Text == "" ||
+                price.Value == 0 ||
+                doors.Value == 0 ||
+                description.Text == "" ||
+                consumption.Value == 0 ||
+                fuel.Text == "")
+            {
+                note.Visible = true;
+                return;
+            }
             car.Model = model.Text;
-            car.Price = double.Parse(price.Text);
+            car.Price = price.Value;
             car.Doors = (int)doors.Value;
-            car.Consumption = int.Parse(consumption.Text);
+            car.Consumption = consumption.Value;
             car.Fuel = fuel.Text;
             car.Description = description.Text;
             parent.parent.ctrl.Update(car);
@@ -45,6 +55,11 @@ namespace KR
         {
             parent.parent.ctrl.Remove(car);
             parent.CloseCarForm();
+        }
+        private void clearNote(object sender = null, EventArgs e = null)
+        {
+            note.Visible = false;
+
         }
     }
 }

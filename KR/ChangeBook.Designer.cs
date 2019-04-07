@@ -37,6 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.note = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -63,6 +64,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(271, 20);
             this.dateTimePicker2.TabIndex = 24;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.clearNote);
             // 
             // dateTimePicker1
             // 
@@ -70,6 +72,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(271, 20);
             this.dateTimePicker1.TabIndex = 23;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.clearNote);
             // 
             // label7
             // 
@@ -120,11 +123,23 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // note
+            // 
+            this.note.AutoSize = true;
+            this.note.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.note.Location = new System.Drawing.Point(27, 234);
+            this.note.Name = "note";
+            this.note.Size = new System.Drawing.Size(157, 13);
+            this.note.TabIndex = 28;
+            this.note.Text = "Указаны некорректные даты";
+            this.note.Visible = false;
+            // 
             // ChangeBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(337, 243);
+            this.ClientSize = new System.Drawing.Size(337, 256);
+            this.Controls.Add(this.note);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox4);
@@ -152,5 +167,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label note;
     }
 }

@@ -44,6 +44,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.note = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -87,6 +88,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 25);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(211, 20);
             this.textBox1.TabIndex = 4;
             // 
@@ -94,6 +96,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(12, 72);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(211, 20);
             this.textBox2.TabIndex = 5;
             // 
@@ -104,6 +107,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(488, 106);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.clearNote);
             // 
             // radioButton1
             // 
@@ -201,12 +205,25 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(201, 21);
             this.comboBox1.TabIndex = 15;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.clearNote);
+            // 
+            // note
+            // 
+            this.note.AutoSize = true;
+            this.note.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.note.Location = new System.Drawing.Point(209, 312);
+            this.note.Name = "note";
+            this.note.Size = new System.Drawing.Size(109, 13);
+            this.note.TabIndex = 16;
+            this.note.Text = "Заполните все поля";
+            this.note.Visible = false;
             // 
             // NewReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 355);
+            this.Controls.Add(this.note);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
@@ -249,5 +266,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label note;
     }
 }

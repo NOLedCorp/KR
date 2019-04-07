@@ -37,8 +37,9 @@ namespace KR
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || richTextBox1.Text == "" || Mark<0)
+            if (comboBox1.Text=="" || richTextBox1.Text == "" || Mark<0)
             {
+                note.Visible = true;
                 return;
             }
             parent.AddReport(new Report
@@ -53,6 +54,12 @@ namespace KR
             parent.CloseForm();
         }
 
+        private void clearNote(object sender = null, EventArgs e = null)
+        {
+            note.Visible = false;
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             parent.CloseForm();
@@ -61,26 +68,31 @@ namespace KR
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             Mark = 1;
+            clearNote();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             Mark = 2;
+            clearNote();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             Mark = 3;
+            clearNote();
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             Mark = 4;
+            clearNote();
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
             Mark = 5;
+            clearNote();
         }
     }
 }

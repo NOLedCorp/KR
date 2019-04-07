@@ -33,10 +33,21 @@ namespace KR
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(dateTimePicker1.Value < DateTime.Now || dateTimePicker2.Value < dateTimePicker1.Value)
+            {
+                note.Visible = true;
+                return;
+            }
             _book.DateStart = dateTimePicker1.Value;
             _book.DateFinish = dateTimePicker2.Value;
             parent.parent.ctrl.Update(_book);
             parent.CloseChangeForm();
+        }
+
+        private void clearNote(object sender, EventArgs e)
+        {
+            note.Visible = false;
+
         }
 
         private void button2_Click(object sender, EventArgs e)

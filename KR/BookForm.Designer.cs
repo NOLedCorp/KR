@@ -40,6 +40,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.note = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -101,15 +102,19 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(29, 67);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(272, 20);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.clearNote);
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(29, 109);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(272, 20);
             this.textBox2.TabIndex = 8;
+            this.textBox2.TextChanged += new System.EventHandler(this.clearNote);
             // 
             // dateTimePicker1
             // 
@@ -117,6 +122,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(271, 20);
             this.dateTimePicker1.TabIndex = 11;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.clearNote);
             // 
             // dateTimePicker2
             // 
@@ -124,6 +130,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(271, 20);
             this.dateTimePicker2.TabIndex = 12;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.clearNote);
             // 
             // textBox4
             // 
@@ -143,11 +150,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // note
+            // 
+            this.note.AutoSize = true;
+            this.note.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.note.Location = new System.Drawing.Point(27, 322);
+            this.note.Name = "note";
+            this.note.Size = new System.Drawing.Size(157, 13);
+            this.note.TabIndex = 15;
+            this.note.Text = "Указаны некорректные даты";
+            this.note.Visible = false;
+            // 
             // BookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(332, 344);
+            this.Controls.Add(this.note);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.dateTimePicker2);
@@ -181,5 +200,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label note;
     }
 }

@@ -13,6 +13,6 @@ namespace KR.Models
         public DateTime DateStart { get; set; }
         public DateTime DateFinish { get; set; }
         public string Model { get; set; }
-        public double Sum { get; set; }
+        public decimal Sum { get; set; }
     }
 }
