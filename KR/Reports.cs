@@ -40,8 +40,6 @@ namespace KR
         {
             GroupBox rr = new GroupBox();
             rr.Height = 200;
-            Panel pp = new Panel();
-            pp.Dock = DockStyle.Fill;
             
             rr.Text = r.User.Name;
 
@@ -50,17 +48,18 @@ namespace KR
             Label date = new Label();
             date.Dock = DockStyle.Bottom;
             
-            Label l = new Label();
+            RichTextBox l = new RichTextBox();
+            l.BorderStyle = BorderStyle.None;
+            l.Multiline = true;
             l.Dock = DockStyle.Fill;
+            l.ReadOnly = true;
             l.Font = new Font("Microsoft Sans Serif", 12);
             date.Font = new Font("Microsoft Sans Serif", 10);
             car.Font = new Font("Microsoft Sans Serif", 10);
             l.Text = r.Text;
             date.Text = "Дата: " + r.CreateDate.ToShortDateString();
             car.Text = "Автомобиль: " + r.Car.Model;
-            pp.Controls.Add(l);
-            pp.AutoScroll = true;
-            rr.Controls.Add(pp);
+            rr.Controls.Add(l);
             rr.Controls.Add(date);
             rr.Controls.Add(car);
             p.Controls.Add(rr);

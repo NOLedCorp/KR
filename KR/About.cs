@@ -15,6 +15,7 @@ namespace KR
         public About()
         {
             InitializeComponent();
+            textBox1.Focus();
         }
 
         private void label1_Click(object sender, EventArgs e)
