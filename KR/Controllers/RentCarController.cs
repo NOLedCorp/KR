@@ -13,6 +13,7 @@ namespace KR.Controllers
         private UserService us = new UserService();
         private CarService cs = new CarService();
         private BookService bs = new BookService();
+        private ExcelExportService export = new ExcelExportService();
         public void Add(User user)
         {
             us.AddUser(user);
@@ -30,6 +31,11 @@ namespace KR.Controllers
         public List<Book> GetBooks()
         {
             return bs.Get();
+        }
+
+        public List<Book> GetB()
+        {
+            return bs.Books;
         }
 
         public int GetNewUserId()
@@ -106,6 +112,11 @@ namespace KR.Controllers
         public List<Book> GetUserBooks(int UserId)
         {
             return bs.GetUserBooks(UserId);
+        }
+
+        public void Export(List<CarRating> rc, List<Profit> pr)
+        {
+            export.Show(rc, pr, this);
         }
     }
 }

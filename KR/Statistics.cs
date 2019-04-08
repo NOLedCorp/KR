@@ -69,6 +69,10 @@ namespace KR
             }
             
         }
-        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _ctrl.Export(_ratingCars, _profits);
+        }
     }
 }
