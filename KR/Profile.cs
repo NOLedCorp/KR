@@ -117,5 +117,39 @@ namespace KR
             }
             
         }
+
+        private void name_TextChanged(object sender, EventArgs e)
+        {
+            if(name.Text != parent.user.Name)
+            {
+                button4.Visible = true;
+            }
+            else
+            {
+                button4.Visible = false;
+            }
+        }
+
+        private void email_TextChanged(object sender, EventArgs e)
+        {
+            if (email.Text != parent.user.Email)
+            {
+                button4.Visible = true;
+            }
+            else
+            {
+                button4.Visible = false;
+            }
+        }
+
+        private void button4_MouseEnter(object sender, EventArgs e)
+        {
+            button4.ForeColor = Color.Blue;
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            button4.ForeColor = Color.Black;
+        }
     }
 }

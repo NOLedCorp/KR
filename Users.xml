@@ -28,4 +28,11 @@
     <Password>vvv</Password>
     <IsAdmin>true</IsAdmin>
   </User>
+  <User>
+    <UserId>4</UserId>
+    <Name>Иван Александрович</Name>
+    <Email>nomokonovia@yandex.ru</Email>
+    <Password>123</Password>
+    <IsAdmin>false</IsAdmin>
+  </User>
 </ArrayOfUser>

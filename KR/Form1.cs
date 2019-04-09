@@ -32,6 +32,7 @@ namespace KR
             this.curForm = carsForm;
             curForm.Show();
             user = ctrl.GetU();
+            автомобилиToolStripMenuItem.BackColor =  Color.LightGray;
         }
 
         public void автомобилиToolStripMenuItem_Click(object sender = null, EventArgs e = null)
@@ -47,6 +48,8 @@ namespace KR
             carsForm.Dock = DockStyle.Fill;
             this.curForm = carsForm;
             curForm.Show();
+            Clear();
+            автомобилиToolStripMenuItem.BackColor =  Color.LightGray;
 
         }
 
@@ -63,6 +66,16 @@ namespace KR
             reportsForm.FormBorderStyle = FormBorderStyle.None;
             curForm = reportsForm;
             curForm.Show();
+            Clear();
+            отзывыToolStripMenuItem.BackColor =  Color.LightGray;
+        }
+
+        private void Clear()
+        {
+            личныйКабинетToolStripMenuItem.BackColor = SystemColors.Control;
+            автомобилиToolStripMenuItem.BackColor = SystemColors.Control;
+            отзывыToolStripMenuItem.BackColor = SystemColors.Control;
+            оСебеToolStripMenuItem.BackColor = SystemColors.Control;
         }
 
         private void личныйКабинетToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,6 +98,8 @@ namespace KR
                 profileForm.FormBorderStyle = FormBorderStyle.None;
                 curForm = profileForm;
                 curForm.Show();
+                Clear();
+                личныйКабинетToolStripMenuItem.BackColor =  Color.LightGray;
             }
 
         }
@@ -115,6 +130,8 @@ namespace KR
             aboutForm.FormBorderStyle = FormBorderStyle.None;
             curForm = aboutForm;
             curForm.Show();
+            Clear();
+            оСебеToolStripMenuItem.BackColor = Color.LightGray;
         }
 
         public void EnterUser(string email, string password, bool save)

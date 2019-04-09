@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<User xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UserId>4</UserId>
+  <Name>Иван Александрович</Name>
+  <Email>nomokonovia@yandex.ru</Email>
+  <Password>123</Password>
+  <IsAdmin>false</IsAdmin>
+</User>
