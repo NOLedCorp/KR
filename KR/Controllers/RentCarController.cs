@@ -23,6 +23,11 @@ namespace KR.Controllers
             return us.GetUser(email, password, save);
         }
 
+        public List<User> GetUsers()
+        {
+            return us.GetUsers();
+        }
+
         public User GetU()
         {
             return us.GetUser();

@@ -26,12 +26,11 @@ namespace KR
             email.Text = parent.user.Email;
             if (!parent.user.IsAdmin)
             {
-                button1.Visible = false;
-                button1.Enabled = false;
-                button3.Visible = false;
-                button3.Enabled = false; 
+                groupBox2.Visible = false;
+                groupBox3.Visible = false; 
             }
             ShowBooks();
+
             
         }
 
@@ -97,6 +96,16 @@ namespace KR
         {
             var st = new Statistics();
             st.Show();
+        }
+
+        private void Profile_Load(object sender, EventArgs e)
+        {
+            userBindingSource.DataSource = parent.ctrl.GetUsers();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

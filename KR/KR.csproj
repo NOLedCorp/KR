@@ -195,6 +195,7 @@
     <None Include="Properties\DataSources\KR.Models.Car.datasource" />
     <None Include="Properties\DataSources\KR.Models.CarRating.datasource" />
     <None Include="Properties\DataSources\KR.Models.Profit.datasource" />
+    <None Include="Properties\DataSources\KR.Models.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
