@@ -98,6 +98,11 @@ namespace KR.Controllers
         {
             bs.Update(book);
         }
+
+        public void Update(User user)
+        {
+            us.Update(user);
+        }
         public bool CheckCarBook(DateTime dateStart, DateTime dateFinish, int carId)
         {
             return bs.CheckCarBook(dateStart, dateFinish, carId);

@@ -12,7 +12,7 @@
     <Name>Иван</Name>
     <Email>ivan</Email>
     <Password>ivan</Password>
-    <IsAdmin>true</IsAdmin>
+    <IsAdmin>false</IsAdmin>
   </User>
   <User>
     <UserId>2</UserId>
@@ -26,6 +26,6 @@
     <Name>Ванька</Name>
     <Email>vvv</Email>
     <Password>vvv</Password>
-    <IsAdmin>false</IsAdmin>
+    <IsAdmin>true</IsAdmin>
   </User>
 </ArrayOfUser>

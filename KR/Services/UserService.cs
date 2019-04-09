@@ -67,6 +67,16 @@ namespace KR.Services
 
         }
 
+        public void Update(User user)
+        {
+            var u = Users.Find(x => x.UserId == user.UserId);
+            u.Name = user.Name;
+            u.Email = user.Email;
+            u.IsAdmin = user.IsAdmin;
+            Save();
+
+        }
+
         public void SaveUser(User user)
         {
             if (File.Exists("User.xml"))

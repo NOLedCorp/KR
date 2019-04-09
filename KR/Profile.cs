@@ -107,5 +107,15 @@ namespace KR
         {
 
         }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex>-1)
+            {
+                var u = (User)userBindingSource[e.RowIndex];
+                parent.ctrl.Update(u);
+            }
+            
+        }
     }
 }
