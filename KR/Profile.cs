@@ -74,22 +74,11 @@ namespace KR
             CloseForm();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             parent.user = null;
             parent.ctrl.Exit();
             parent.автомобилиToolStripMenuItem_Click();
-        }
-
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            chBookForm = new ChangeBook(books[e.RowIndex], this);
-            chBookForm.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -101,11 +90,6 @@ namespace KR
         private void Profile_Load(object sender, EventArgs e)
         {
             userBindingSource.DataSource = parent.ctrl.GetUsers();
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -142,14 +126,18 @@ namespace KR
             }
         }
 
-        private void button4_MouseEnter(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            button4.ForeColor = Color.Blue;
+            parent.user.Name = name.Text;
+            parent.user.Email = email.Text;
+            parent.ctrl.Update(parent.user);
+            button4.Visible = false;
         }
 
-        private void button4_MouseLeave(object sender, EventArgs e)
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            button4.ForeColor = Color.Black;
+            chBookForm = new ChangeBook(books[e.RowIndex], this);
+            chBookForm.Show();
         }
     }
 }
