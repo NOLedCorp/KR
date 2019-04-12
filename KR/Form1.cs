@@ -147,7 +147,7 @@ namespace KR
 
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process p = Process.Start("notepad.exe", "../../info.txt");
+            Process p = Process.Start("notepad.exe", "readme.txt");
         }
     }
 }

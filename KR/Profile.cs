@@ -143,5 +143,16 @@ namespace KR
             }
             
         }
+
+        private void find_Click(object sender, EventArgs e)
+        {
+            userBindingSource.DataSource = parent.ctrl.GetUsers().FindAll(x => x.Email.StartsWith(textBox1.Text));
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            userBindingSource.DataSource = parent.ctrl.GetUsers();
+        }
     }
 }

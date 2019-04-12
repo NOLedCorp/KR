@@ -20,11 +20,11 @@ namespace KR.Services
         }
         public List<Report> GetReports()
         {
-            if (File.Exists("../../../Reports.xml"))
+            if (File.Exists("Storage/Reports.xml"))
             {
                 // Десериализуем
                 XmlSerializer xs = new XmlSerializer(typeof(List<Report>));
-                FileStream fs = new FileStream("../../../Reports.xml", FileMode.Open);
+                FileStream fs = new FileStream("Storage/Reports.xml", FileMode.Open);
                 var Reports = (List<Report>)xs.Deserialize(fs);
                 fs.Close();
                 return Reports;
@@ -47,11 +47,11 @@ namespace KR.Services
 
         public List<Car> GetCars()
         {
-            if (File.Exists("../../../Cars.xml"))
+            if (File.Exists("Storage/Cars.xml"))
             {
                 // Десериализуем
                 XmlSerializer xs = new XmlSerializer(typeof(List<Car>));
-                FileStream fs = new FileStream("../../../Cars.xml", FileMode.Open);
+                FileStream fs = new FileStream("Storage/Cars.xml", FileMode.Open);
                 var Cars = (List<Car>)xs.Deserialize(fs);
                 fs.Close();
                 return Cars;
@@ -94,23 +94,23 @@ namespace KR.Services
 
         private void Save()
         {
-            if (File.Exists("../../../Cars.xml"))
+            if (File.Exists("Storage/Cars.xml"))
             {
-                File.WriteAllText("../../../Cars.xml", "");
+                File.WriteAllText("Storage/Cars.xml", "");
             }
             XmlSerializer xs = new XmlSerializer(typeof(List<Car>));
-            FileStream fs = new FileStream("../../../Cars.xml", FileMode.OpenOrCreate);
+            FileStream fs = new FileStream("Storage/Cars.xml", FileMode.OpenOrCreate);
             xs.Serialize(fs, Cars);
             fs.Close();
         }
         private void SaveReports()
         {
-            if (File.Exists("../../../Reports.xml"))
+            if (File.Exists("Storage/Reports.xml"))
             {
-                File.WriteAllText("../../../Reports.xml", "");
+                File.WriteAllText("Storage/Reports.xml", "");
             }
             XmlSerializer xs = new XmlSerializer(typeof(List<Report>));
-            FileStream fs = new FileStream("../../../Reports.xml", FileMode.OpenOrCreate);
+            FileStream fs = new FileStream("Storage/Reports.xml", FileMode.OpenOrCreate);
             xs.Serialize(fs, Reports);
             fs.Close();
         }

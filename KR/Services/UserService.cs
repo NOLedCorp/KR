@@ -19,11 +19,11 @@ namespace KR.Services
 
         public List<User> GetUsers()
         {
-            if (File.Exists("../../../Users.xml"))
+            if (File.Exists("Storage/Users.xml"))
             {
                 // Десериализуем
                 XmlSerializer xs = new XmlSerializer(typeof(List<User>));
-                FileStream fs = new FileStream("../../../Users.xml", FileMode.Open);
+                FileStream fs = new FileStream("Storage/Users.xml", FileMode.Open);
                 var Users = (List<User>)xs.Deserialize(fs);
                 fs.Close();
                 return Users;
@@ -45,11 +45,11 @@ namespace KR.Services
 
         public User GetUser()
         {
-            if (File.Exists("User.xml"))
+            if (File.Exists("Storage/User.xml"))
             {
                 // Десериализуем
                 XmlSerializer xs = new XmlSerializer(typeof(User));
-                FileStream fs = new FileStream("User.xml", FileMode.Open);
+                FileStream fs = new FileStream("Storage/User.xml", FileMode.Open);
                 var User = (User)xs.Deserialize(fs);
                 fs.Close();
                 return User;
@@ -79,32 +79,32 @@ namespace KR.Services
 
         public void SaveUser(User user)
         {
-            if (File.Exists("User.xml"))
+            if (File.Exists("Storage/User.xml"))
             {
-                File.WriteAllText("User.xml", "");
+                File.WriteAllText("Storage/User.xml", "");
             }
             XmlSerializer xs = new XmlSerializer(typeof(User));
-            FileStream fs = new FileStream("User.xml", FileMode.OpenOrCreate);
+            FileStream fs = new FileStream("Storage/User.xml", FileMode.OpenOrCreate);
             xs.Serialize(fs, user);
             fs.Close();
         }
 
         public void Exit()
         {
-            if (File.Exists("User.xml"))
+            if (File.Exists("Storage/User.xml"))
             {
-                File.Delete("User.xml");
+                File.Delete("Storage/User.xml");
             }
         }
 
         public void Save()
         {
-            if (File.Exists("../../../Users.xml"))
+            if (File.Exists("Storage/Users.xml"))
             {
-                File.WriteAllText("../../../Users.xml", "");
+                File.WriteAllText("Storage/Users.xml", "");
             }
             XmlSerializer xs = new XmlSerializer(typeof(List<User>));
-            FileStream fs = new FileStream("../../../Users.xml", FileMode.OpenOrCreate);
+            FileStream fs = new FileStream("Storage/Users.xml", FileMode.OpenOrCreate);
             xs.Serialize(fs, Users);
             fs.Close();
         }

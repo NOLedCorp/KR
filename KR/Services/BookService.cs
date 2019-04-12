@@ -20,11 +20,11 @@ namespace KR.Services
 
         public List<Book> Get()
         {
-            if (File.Exists("../../../Books.xml"))
+            if (File.Exists("Storage/Books.xml"))
             {
                 // Десериализуем
                 XmlSerializer xs = new XmlSerializer(typeof(List<Book>));
-                FileStream fs = new FileStream("../../../Books.xml", FileMode.Open);
+                FileStream fs = new FileStream("Storage/Books.xml", FileMode.Open);
                 var Books = (List<Book>)xs.Deserialize(fs);
                 fs.Close();
                 return Books;
@@ -86,12 +86,12 @@ namespace KR.Services
         }
         private void Save()
         {
-            if (File.Exists("../../../Books.xml"))
+            if (File.Exists("Storage/Books.xml"))
             {
-                File.WriteAllText("../../../Books.xml", "");
+                File.WriteAllText("Storage/Books.xml", "");
             }
             XmlSerializer xs = new XmlSerializer(typeof(List<Book>));
-            FileStream fs = new FileStream("../../../Books.xml", FileMode.OpenOrCreate);
+            FileStream fs = new FileStream("Storage/Books.xml", FileMode.OpenOrCreate);
             
             xs.Serialize(fs, Books);
             fs.Close();
