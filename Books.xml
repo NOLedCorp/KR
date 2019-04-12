@@ -21,4 +21,46 @@
     <DateStart>2019-04-12T00:00:00</DateStart>
     <DateFinish>2019-04-26T00:00:00</DateFinish>
   </Book>
+  <Book>
+    <BookId>1</BookId>
+    <Car>
+      <CarId>1</CarId>
+      <Model>VW Polo</Model>
+      <Price>1000</Price>
+      <Doors>5</Doors>
+      <Consumption>6</Consumption>
+      <Description>Большой багажник!</Description>
+      <Fuel>Дизель</Fuel>
+    </Car>
+    <User>
+      <UserId>4</UserId>
+      <Name>Иван Александрович</Name>
+      <Email>nomokonovia@yandex.ru</Email>
+      <Password>123</Password>
+      <IsAdmin>false</IsAdmin>
+    </User>
+    <DateStart>2019-04-18T00:00:00</DateStart>
+    <DateFinish>2019-04-27T00:00:00</DateFinish>
+  </Book>
+  <Book>
+    <BookId>2</BookId>
+    <Car>
+      <CarId>2</CarId>
+      <Model>Шкода Рапид</Model>
+      <Price>800</Price>
+      <Doors>5</Doors>
+      <Consumption>8</Consumption>
+      <Description>Большой и быстрый автомобиль</Description>
+      <Fuel>Бензин</Fuel>
+    </Car>
+    <User>
+      <UserId>3</UserId>
+      <Name>Ванька</Name>
+      <Email>vvv</Email>
+      <Password>vvv</Password>
+      <IsAdmin>false</IsAdmin>
+    </User>
+    <DateStart>2019-05-09T00:00:00</DateStart>
+    <DateFinish>2019-05-17T00:00:00</DateFinish>
+  </Book>
 </ArrayOfBook>

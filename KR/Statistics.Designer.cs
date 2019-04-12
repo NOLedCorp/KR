@@ -40,8 +40,6 @@
             this.sumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.profit = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -86,7 +84,7 @@
             this.groupBox2.Controls.Add(this.profit);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.groupBox2.Location = new System.Drawing.Point(0, 252);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(783, 404);
@@ -109,10 +107,10 @@
             this.sumDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.profitBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 78);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 75);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(777, 278);
+            this.dataGridView2.Size = new System.Drawing.Size(777, 281);
             this.dataGridView2.TabIndex = 2;
             // 
             // idDataGridViewTextBoxColumn1
@@ -121,6 +119,7 @@
             this.idDataGridViewTextBoxColumn1.HeaderText = "№ Заказа";
             this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
             this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Width = 120;
             // 
             // clientNameDataGridViewTextBoxColumn
             // 
@@ -135,7 +134,7 @@
             this.dateStartDataGridViewTextBoxColumn.HeaderText = "Начало аренды";
             this.dateStartDataGridViewTextBoxColumn.Name = "dateStartDataGridViewTextBoxColumn";
             this.dateStartDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateStartDataGridViewTextBoxColumn.Width = 150;
+            this.dateStartDataGridViewTextBoxColumn.Width = 160;
             // 
             // dateFinishDataGridViewTextBoxColumn
             // 
@@ -151,6 +150,7 @@
             this.modelDataGridViewTextBoxColumn1.HeaderText = "Автомобиль";
             this.modelDataGridViewTextBoxColumn1.Name = "modelDataGridViewTextBoxColumn1";
             this.modelDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.modelDataGridViewTextBoxColumn1.Width = 120;
             // 
             // sumDataGridViewTextBoxColumn
             // 
@@ -166,8 +166,6 @@
             // 
             // profit
             // 
-            this.profit.Controls.Add(this.label5);
-            this.profit.Controls.Add(this.label4);
             this.profit.Controls.Add(this.label3);
             this.profit.Controls.Add(this.label2);
             this.profit.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -178,31 +176,14 @@
             this.profit.TabStop = false;
             this.profit.Enter += new System.EventHandler(this.profit_Enter);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(438, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 24);
-            this.label5.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label4.Location = new System.Drawing.Point(260, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(239, 18);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Самый популярный автомобиль:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(128, 16);
+            this.label3.Location = new System.Drawing.Point(168, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 24);
+            this.label3.Size = new System.Drawing.Size(36, 20);
             this.label3.TabIndex = 1;
+            this.label3.Text = "000";
             // 
             // label2
             // 
@@ -222,7 +203,7 @@
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(3, 25);
+            this.groupBox3.Location = new System.Drawing.Point(3, 22);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(777, 53);
@@ -247,6 +228,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 24);
             this.dateTimePicker2.TabIndex = 4;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.ReloadProfits);
             // 
             // dateTimePicker1
             // 
@@ -256,12 +238,13 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
             this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.ReloadProfits);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(783, 252);
@@ -282,10 +265,10 @@
             this.markDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.carRatingBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 22);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(777, 224);
+            this.dataGridView1.Size = new System.Drawing.Size(777, 227);
             this.dataGridView1.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -367,12 +350,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateStartDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateFinishDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sumDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox profit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -387,7 +364,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reportsNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn markDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateStartDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateFinishDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sumDataGridViewTextBoxColumn;
     }
 }

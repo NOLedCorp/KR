@@ -37,8 +37,26 @@ namespace KR
             }
             carRatingBindingSource.DataSource = _ratingCars;
             _books = _ctrl.GetBooks();
-            _profits = _books.FindAll(x => x.DateStart<dateTimePicker2.Value && x.DateStart>dateTimePicker1.Value).Select(x => new Profit { Id = x.BookId, ClientName = x.User.Name, DateFinish = x.DateFinish, DateStart = x.DateStart, Model = x.Car.Model, Sum = x.Car.Price * (x.DateFinish - x.DateStart).Days }).ToList();
-            profitBindingSource.DataSource = _profits;
+            ReloadProfits();
+
+        }
+
+        private void ReloadProfits(object sender = null, EventArgs e = null)
+        {
+            if(_books != null)
+            {
+                if (dateTimePicker2.Value < dateTimePicker1.Value)
+                {
+                    var t = dateTimePicker2.Value;
+                    dateTimePicker2.Value = dateTimePicker1.Value;
+                    dateTimePicker1.Value = t;
+                }
+                _profits = _books.FindAll(x => x.DateStart < dateTimePicker2.Value && x.DateStart > dateTimePicker1.Value).Select(x => new Profit { Id = x.BookId, ClientName = x.User.Name, DateFinish = x.DateFinish, DateStart = x.DateStart, Model = x.Car.Model, Sum = x.Car.Price * (x.DateFinish - x.DateStart).Days }).ToList();
+                profitBindingSource.DataSource = _profits;
+                label3.Text = _ctrl.GetB().Where(x => x.DateStart < dateTimePicker2.Value && x.DateStart > dateTimePicker1.Value).Select(x => x.Car.Price * (x.DateFinish - x.DateStart).Days).Sum().ToString();
+
+            }
+            
         }
 
         private void carRatingBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -72,7 +90,7 @@ namespace KR
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _ctrl.Export(_ratingCars, _profits);
+            _ctrl.Export(_ratingCars);
         }
     }
 }

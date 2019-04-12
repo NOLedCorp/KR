@@ -69,6 +69,7 @@
             // 
             // fuel
             // 
+            this.fuel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fuel.FormattingEnabled = true;
             this.fuel.Items.AddRange(new object[] {
             "Бензин",

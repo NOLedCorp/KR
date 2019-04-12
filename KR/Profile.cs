@@ -136,8 +136,12 @@ namespace KR
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            chBookForm = new ChangeBook(books[e.RowIndex], this);
-            chBookForm.Show();
+            if (e.RowIndex > -1)
+            {
+                chBookForm = new ChangeBook(books[e.RowIndex], this);
+                chBookForm.Show();
+            }
+            
         }
     }
 }

@@ -29,26 +29,12 @@ namespace KR.Services
             excelapp.Workbooks.Open(fileName);
         }
 
-        public void Show(List<CarRating> rc, List<Profit> pr, RentCarController ctrl)
+        public void Show(List<CarRating> rc, RentCarController ctrl)
         {
-            ShowCarProfit(pr);
             _ctrl = ctrl;
             ShowProfit();
             ShowRating();
             excelapp.Visible = true;
-        }
-
-        private void ShowCarProfit(List<Profit> pr)
-        {
-            excelworksheet = (Worksheet)excelapp.Worksheets.get_Item(2);
-            for (int m = 0; m < pr.Count; m++)
-            {
-                var excelcells = (Range)excelworksheet.Cells[m+1, 1];
-                //выводим координаты ячеек
-                excelcells.Value2 = pr[m].Model;
-                excelcells = (Range)excelworksheet.Cells[m+1, 2];
-                excelcells.Value2 = pr.Where(x => x.Model == pr[m].Model).Select(x => x.Sum).Sum();
-            }
         }
 
         private void ShowRating()

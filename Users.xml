@@ -26,7 +26,7 @@
     <Name>Ванька</Name>
     <Email>vvv</Email>
     <Password>vvv</Password>
-    <IsAdmin>true</IsAdmin>
+    <IsAdmin>false</IsAdmin>
   </User>
   <User>
     <UserId>4</UserId>

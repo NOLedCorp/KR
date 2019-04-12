@@ -124,9 +124,9 @@ namespace KR.Controllers
             return bs.GetUserBooks(UserId);
         }
 
-        public void Export(List<CarRating> rc, List<Profit> pr)
+        public void Export(List<CarRating> rc)
         {
-            export.Show(rc, pr, this);
+            export.Show(rc, this);
         }
     }
 }
