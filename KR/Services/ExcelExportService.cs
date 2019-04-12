@@ -39,7 +39,7 @@ namespace KR.Services
 
         private void ShowRating()
         {
-            excelworksheet = (Worksheet)excelapp.Worksheets.get_Item(4);
+            excelworksheet = (Worksheet)excelapp.Worksheets.get_Item(3);
             var cars = _ctrl.GetCars();
             for (int m = 0; m < cars.Count; m++)
             {
@@ -62,7 +62,7 @@ namespace KR.Services
 
         private void ShowProfit()
         {
-            excelworksheet = (Worksheet)excelapp.Worksheets.get_Item(3);
+            excelworksheet = (Worksheet)excelapp.Worksheets.get_Item(2);
             var year = DateTime.Now.Year;
             for (int m = 2; m < 13; m++)
             {
