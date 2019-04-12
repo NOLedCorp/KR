@@ -61,7 +61,6 @@
             this.textBox1.Text = "Номоконов Иван Александрович\r\n\r\nФакультет Прикладной математики и информатики\r\n\r\n" +
     "Прикладная информатика\r\n\r\n2019 год";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 

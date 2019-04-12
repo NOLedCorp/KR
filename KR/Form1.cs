@@ -140,11 +140,6 @@ namespace KR
             CloseForm();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process p = Process.Start("notepad.exe", "readme.txt");

@@ -24,4 +24,26 @@
     <Mark>4</Mark>
     <CreateDate>2019-04-09T14:34:07.7680247+03:00</CreateDate>
   </Report>
+  <Report>
+    <ReportId>1</ReportId>
+    <Car>
+      <CarId>3</CarId>
+      <Model>Шкода Фабия</Model>
+      <Price>800</Price>
+      <Doors>5</Doors>
+      <Consumption>6</Consumption>
+      <Description>Отличный автомобиль для новичка</Description>
+      <Fuel>Бензин</Fuel>
+    </Car>
+    <User>
+      <UserId>0</UserId>
+      <Name>Admin</Name>
+      <Email>adm</Email>
+      <Password>adm</Password>
+      <IsAdmin>true</IsAdmin>
+    </User>
+    <Text>Очень понравилось машина! Резво разгоняется, комфортно едет по гравию.</Text>
+    <Mark>5</Mark>
+    <CreateDate>2019-04-13T02:08:48.1365203+03:00</CreateDate>
+  </Report>
 </ArrayOfReport>

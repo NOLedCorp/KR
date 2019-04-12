@@ -30,10 +30,10 @@
   <Car>
     <CarId>3</CarId>
     <Model>Шкода Фабия</Model>
-    <Price>600</Price>
+    <Price>800</Price>
     <Doors>5</Doors>
     <Consumption>6</Consumption>
-    <Description>Дешевый но резвый автомобиль для молодой семьи.</Description>
+    <Description>Отличный автомобиль для новичка</Description>
     <Fuel>Бензин</Fuel>
   </Car>
 </ArrayOfCar>
